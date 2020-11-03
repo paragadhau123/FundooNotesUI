@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Fundoo-Notes-UI"
+    }
+  },
+  "defaultProject": "Fundoo-Notes-UI",
+  "cli": {
+    "analytics": "1b0a5f40-de27-47fe-bf0b-9d888f2df3cf"
+  }
 }
