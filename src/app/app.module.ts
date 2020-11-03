@@ -15,11 +15,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule}from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { LoginComponent } from './Components/login/login.component';
+import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
+    ForgotpasswordComponent,
   ],
   imports: [
     BrowserModule,
