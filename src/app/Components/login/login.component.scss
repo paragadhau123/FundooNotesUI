@@ -11,9 +11,15 @@
     margin-top: 150px;
 }
 
+.login {
+    font-family: 'Google Sans', 'Noto Sans Myanmar UI', arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3333;
+}
+
 .card {
     width: 350px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .signin {
@@ -25,7 +31,6 @@
 
 .fundoo {
     font-size: 25px;
-    font-weight: bold;
     margin-bottom: 10px;
 }
 
