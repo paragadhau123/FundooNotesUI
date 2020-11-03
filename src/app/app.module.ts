@@ -14,10 +14,12 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule}from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { LoginComponent } from './Components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,3 +40,4 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
