@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LoginComponent } from './Components/login/login.component';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
     RegisterComponent,
     LoginComponent,
     ForgotpasswordComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
     MatIconModule,
     HttpClientModule,
     MatFormFieldModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

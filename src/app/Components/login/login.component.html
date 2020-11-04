@@ -1,8 +1,8 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="main">
     <div fxLayout="row" fxLayoutGap="10">
         <mat-card class="card">
-            <form>
-                <div fxLayout="row" fxLayoutAlign="center center" class="fundoo">
+            <form [formGroup]="form">
+                <div class="fundoo">
                     <span class="blue">F</span>
                     <span class="red">u</span>
                     <span class="yellow">n</span>
@@ -10,8 +10,7 @@
                     <span class="green">o</span>
                     <span class="red">o</span>
                 </div>
-                <div fxLayout="row" fxLayoutAlign="center center" class="login">Log In</div>
-                <!-- <div>Login to your account</div> -->
+                <div>Login to your account</div>
                 <form [formGroup]="form">
                     <div>
                         <mat-form-field class="form-field" appearance="outline">
@@ -40,7 +39,7 @@
                 </form>
                 <a href="/register" class="signin">sign up instead</a>
                 <span fxLayout="row" fxLayoutAlign="end">
-                    <button type="submit" mat-flat-button color="primary">Login</button>
+                    <button type="submit"  (click)="onubmit()" mat-flat-button color="primary">Login</button>
                 </span>
             </form>
         </mat-card>

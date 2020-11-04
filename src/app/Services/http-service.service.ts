@@ -10,10 +10,26 @@ export class HttpServiceService {
 
   }
   baseUrl = environment.baseUrl;
-  post(url, user) {
+
+  register(url, user) {
     let options =
       { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
     console.log(" https called");
     return this.httpclient.post(this.baseUrl + url, user, options)
   }
+
+  login(url, data) {
+    let options =
+      { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+    console.log(" https called");
+    return this.httpclient.post(this.baseUrl + url, data, options)
+  }
+
+  forgotPassword(url, data) {
+    let options =
+      { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+    console.log(" https called");
+    return this.httpclient.post(this.baseUrl + url, data, options)
+  }
+
 }

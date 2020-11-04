@@ -8,8 +8,16 @@ export class UserServiceService {
   constructor(private httpService: HttpServiceService) {
 
   }
-  register(user){
+  register(data){
     console.log("user service called");
-    return this.httpService.post('Accounts/RegisterAccount', user);
+    return this.httpService.register('Accounts/RegisterAccount', data);
+  }
+
+  login(data){
+    return this.httpService.login('Accounts/LoginAccount', data);
+  }
+
+  forgotPassword(data){
+    return this.httpService.forgotPassword('Accounts/ForgetPassword', data);
   }
 }
