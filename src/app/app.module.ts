@@ -13,9 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { LoginComponent } from './Components/login/login.component';
-import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
-import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
+import { LoginComponent } from './components/login/login.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
@@ -24,7 +23,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     RegisterComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,

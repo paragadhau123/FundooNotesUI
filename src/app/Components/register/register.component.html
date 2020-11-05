@@ -17,7 +17,7 @@
                             <mat-label>First Name</mat-label>
                             <input matInput type="text" formControlName="firstFormControl" autocomplete="off" required>
                             <mat-error *ngIf="form.controls.firstFormControl.hasError('required')">
-                                First name is required
+                                first name is required
                             </mat-error>
                             <mat-error *ngIf="form.controls.firstFormControl.hasError('pattern') && !form.controls.firstFormControl.hasError('required')">
                                 please enter valid name
@@ -51,8 +51,6 @@
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label for="password">Password</mat-label>
                             <input matInput [type]="hide ? 'password' : 'text'" formControlName="passFormControl" autocomplete="off" required>
-                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
-                            </mat-icon>
                             <mat-error *ngIf="form.controls.passFormControl.hasError('required')">
                                 password is required
                             </mat-error>
@@ -65,15 +63,19 @@
                             <input matInput [type]="hide ? 'password' : 'text'" formControlName="passConfirmFormControl" autocomplete="off" required>
                             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
                             </mat-icon>
+                            <mat-error *ngIf="form.controls.passFormControl.hasError('required')">
+                                confirm password is required
+                            </mat-error>
                             <mat-error *ngIf="form.controls.passConfirmFormControl.valid">
                                 password not matching
                             </mat-error>
                         </mat-form-field>
+
                     </div>
                     <div>
                         <a href="/login" class="signin">sign In instead</a>
                         <span fxLayout="row" fxLayoutAlign="end">
-                            <button type="submit" mat-flat-button color="primary" (click)="onubmit()">Next</button>
+                            <button type="submit" mat-flat-button color="primary" (click)="onSubmit()">Next</button>
                         </span>
                     </div>
                 </form>
@@ -81,7 +83,6 @@
 
             <div fxFlex="30%" fxLayoutAlign="center center">
                 <img src="../../../assets/images/account.svg" class="image">
-
             </div>
         </mat-card>
     </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from "@angular/forms"
 import { UserServiceService } from "../../Services/user-service.service";
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,7 +12,7 @@ import { UserServiceService } from "../../Services/user-service.service";
 export class RegisterComponent implements OnInit {
   hide = true;
   form: FormGroup;
-  constructor(private fb: FormBuilder, private userService: UserServiceService) {
+  constructor(private fb: FormBuilder, private userService: UserServiceService,public snackBar:MatSnackBar) {
     this.form = this.fb.group({
       firstFormControl: ["",
         Validators.pattern('[a-zA-Z]{2,}')],
@@ -39,7 +41,7 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  onubmit() {
+  onSubmit() {
     let userData = {
       "employeeFirstName": this.form.controls.firstFormControl.value,
       "employeeLastName": this.form.controls.lastFormControl.value,
@@ -49,8 +51,10 @@ export class RegisterComponent implements OnInit {
     }
     console.log(userData)
     this.userService.register(userData).subscribe((result: any) => {
+      this.snackBar.open("registered successfully.", 'success')
       console.log(result)
     }, (error) => {
+      this.snackBar.open("registration unsuccessfull.", 'failed')
       console.log(error)
     })
 

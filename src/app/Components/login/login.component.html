@@ -2,7 +2,7 @@
     <div fxLayout="row" fxLayoutGap="10">
         <mat-card class="card">
             <form [formGroup]="form">
-                <div class="fundoo">
+                <div fxLayout="row" fxLayoutAlign="center center" class="fundoo">
                     <span class="blue">F</span>
                     <span class="red">u</span>
                     <span class="yellow">n</span>
@@ -10,7 +10,8 @@
                     <span class="green">o</span>
                     <span class="red">o</span>
                 </div>
-                <div>Login to your account</div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="login">Login</div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="msg">Continue to Notes</div>
                 <form [formGroup]="form">
                     <div>
                         <mat-form-field class="form-field" appearance="outline">

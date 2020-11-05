@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from "../../Services/user-service.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,10 +25,10 @@ export class LoginComponent implements OnInit {
     }
     console.log(userData)
     this.userservice.login(userData).subscribe((result: any) => {
-      this.snackBar.open("login successfully.", 'success')
+      this.snackBar.open("login successfully.", 'cancle')
       console.log(result)
     }, (error) => {
-      this.snackBar.open("login unsuccessfully.", 'failed')
+      this.snackBar.open("login unsuccessfull.", 'failed')
       console.log(error)
     })
     console.log(this.form.value)
