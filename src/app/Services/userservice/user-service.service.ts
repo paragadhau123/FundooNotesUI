@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpServiceService } from "./http-service.service";
+import { HttpServiceService } from "../httpservice/http-service.service";
 import { HttpHeaders } from '@angular/common/http';
-import { environment } from "../../environments/environment";
+import { environment } from "../../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +11,7 @@ export class UserServiceService {
 
   }
   baseUrl = environment.baseUrl;
+  
   register(data) {
     console.log("user service called");
     return this.httpService.register('Accounts/RegisterAccount', data);

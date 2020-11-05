@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from "../../environments/environment";
+import { environment } from "../../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +31,7 @@ export class HttpServiceService {
     console.log(" https called");
     return this.httpclient.post(this.baseUrl + url, data, options)
   }
+  
   post(url, data, isHeaderRequired=false,headers=null) {
     return this.httpclient.post( url, data, isHeaderRequired && headers)
   }

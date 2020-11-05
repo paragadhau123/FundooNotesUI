@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserServiceService } from "../../Services/user-service.service";
+import { UserServiceService } from "../../Services/userservice/user-service.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
       passFormControl: ""
     })
   }
-  onubmit() {
+  onSubmit() {
     let userData = {
       "email": this.form.controls.emailFormControl.value,
       "password": this.form.controls.passFormControl.value
