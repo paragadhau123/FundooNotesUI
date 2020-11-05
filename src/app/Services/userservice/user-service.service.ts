@@ -10,19 +10,19 @@ export class UserServiceService {
   constructor(private httpService: HttpServiceService) {
 
   }
+
   baseUrl = environment.baseUrl;
-  
+
   register(data) {
-    console.log("user service called");
-    return this.httpService.register('Accounts/RegisterAccount', data);
+    return this.httpService.post(`${this.baseUrl}Accounts/RegisterAccount`, data);
   }
 
   login(data) {
-    return this.httpService.login('Accounts/LoginAccount', data);
+    return this.httpService.post(`${this.baseUrl}Accounts/LoginAccount`, data);
   }
 
   forgotPassword(data) {
-    return this.httpService.forgotPassword('Accounts/ForgetPassword', data);
+    return this.httpService.post(`${this.baseUrl}Accounts/ForgetPassword`, data);
   }
 
   resetPassword(data) {

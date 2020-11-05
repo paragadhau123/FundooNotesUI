@@ -1,8 +1,8 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="main">
+<div fxLayout="row wrap " fxLayoutAlign="center center" class="main">
     <div fxLayout="row" fxLayoutGap="10">
         <mat-card class="card">
             <div fxFlex="70%" class="page">
-                <div class="fundoo">
+                <div class="fundoo" fxLayoutAlign.xs="center center">
                     <span class="blue">F</span>
                     <span class="red">u</span>
                     <span class="yellow">n</span>
@@ -10,77 +10,61 @@
                     <span class="green">o</span>
                     <span class="red">o</span>
                 </div>
-                <div class="heading">Create your account</div>
-                <form [formGroup]="form">
-                    <div>
+                <div class="heading" fxLayoutAlign.xs="center center">Create your account</div>
+                <form (ngSubmit)="register()">
+                    <div fxLayout.xs="column">
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label>First Name</mat-label>
-                            <input matInput type="text" formControlName="firstFormControl" autocomplete="off" required>
-                            <mat-error *ngIf="form.controls.firstFormControl.hasError('required')">
-                                first name is required
-                            </mat-error>
-                            <mat-error *ngIf="form.controls.firstFormControl.hasError('pattern') && !form.controls.firstFormControl.hasError('required')">
-                                please enter valid name
+                            <input matInput type="text" [formControl]="FirstName" autocomplete="off" required>
+                            <mat-error *ngIf="FirstName.invalid">
+                                {{getFirstNameErrorMsg()}}
                             </mat-error>
                         </mat-form-field>
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label>Last Name</mat-label>
-                            <input matInput type="text" formControlName="lastFormControl" autocomplete="off" required>
-                            <mat-error *ngIf="form.controls.lastFormControl.hasError('required')">
-                                last name is required
-                            </mat-error>
-                            <mat-error *ngIf="form.controls.lastFormControl.hasError('pattern') && !form.controls.lastFormControl.hasError('required')">
-                                please enter valid name
+                            <input matInput type="text" [formControl]="LastName" autocomplete="off" required>
+                            <mat-error *ngIf="LastName.invalid">
+                                {{ getLastNameErrorMsg()}}
                             </mat-error>
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field class="name-field" appearance="outline">
                             <mat-label>Username</mat-label>
-                            <input matInput type="text" formControlName="emailFormControl" autocomplete="off" required>
+                            <input matInput type="text" [formControl]="Email" autocomplete="off" required>
                             <mat-hint>You can use letter, number & period</mat-hint>
-                            <mat-error *ngIf="form.controls.emailFormControl.hasError('required')">
-                                email is required
-                            </mat-error>
-                            <mat-error *ngIf="form.controls.emailFormControl.hasError('email')&& !form.controls.emailFormControl.hasError('required')">
-                                please enter valid email id
+                            <mat-error *ngIf="Email.invalid">
+                                {{getEmailErrorMsg()}}
                             </mat-error>
                         </mat-form-field>
                     </div>
-                    <div>
+                    <div fxLayout.xs="column">
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label for="password">Password</mat-label>
-                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="passFormControl" autocomplete="off" required>
-                            <mat-error *ngIf="form.controls.passFormControl.hasError('required')">
-                                password is required
-                            </mat-error>
-                            <mat-error *ngIf="form.controls.passFormControl.hasError('pattern') && !form.controls.passFormControl.hasError('required')">
-                                password must have atleast 1 letter, 1 number, 1symbol and 8 char long
+                            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="Password" autocomplete="off" required>
+                            <mat-error *ngIf="Password.invalid">
+                                {{getPasswordErrorMsg()}}
                             </mat-error>
                         </mat-form-field>
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label>Confirm Password</mat-label>
-                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="passConfirmFormControl" autocomplete="off" required>
+                            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="ConfirmPassword" autocomplete="off" required>
                             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
                             </mat-icon>
-                            <mat-error *ngIf="form.controls.passFormControl.hasError('required')">
-                                confirm password is required
-                            </mat-error>
-                            <mat-error *ngIf="form.controls.passConfirmFormControl.valid">
-                                password not matching
+                            <mat-error *ngIf="ConfirmPassword.invalid">
+                                {{getConfirmPasswordErrorMsg()}}
                             </mat-error>
                         </mat-form-field>
-
                     </div>
                     <div>
-                        <span fxLayout="row" fxLayoutAlign="space-between end">
-                            <a href="/login" class="signin">sign In instead</a>
-                            <button type="submit" mat-flat-button color="primary" (click)="onSubmit()">Next</button>
+                        <span fxLayout="row" fxLayoutAlign="space-between end" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+                        <a routerLink="/login" class="signin">sign In instead</a>
+                            <button type="submit" mat-flat-button color="primary">Next</button>
                         </span>
                     </div>
                 </form>
             </div>
-            <div fxFlex="30%" fxLayoutAlign="center center">
+            <div fxFlex="30%" fxLayoutAlign="center center" fxShow.xs="false" fxShow="true">
                 <img src="../../../assets/images/account.svg" class="image">
             </div>
         </mat-card>

@@ -21,7 +21,6 @@ $size: 100%;
 
 .card {
     width: 350px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .login {
@@ -67,4 +66,10 @@ $size: 100%;
 
 .green {
     color: #34a853;
+}
+
+.heading {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 25px;
 }
