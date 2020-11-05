@@ -13,6 +13,17 @@
     height: 100vh;
 }
 
+$size: 100%;
+.login-form-field {
+    width: 100%;
+    padding-right: 1px;
+}
+
+.card {
+    width: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .login {
     font-family: 'Google Sans', 'Noto Sans Myanmar UI', arial, sans-serif;
     font-size: 24px;
