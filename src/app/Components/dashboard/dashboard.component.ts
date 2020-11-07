@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
- 
+import { UserServiceService } from '../../Services/userservice/user-service.service';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -13,13 +14,9 @@ export class DashboardComponent implements OnInit {
   token = localStorage.getItem('token')
   name = localStorage.getItem('name')
   email = localStorage.getItem('email')
-  constructor( public snackBar: MatSnackBar, public route: Router) { }
+  constructor(private http: UserServiceService, public snackBar: MatSnackBar, public route: Router) { }
 
   ngOnInit(): void {
-  }
-
-  logout() {
-    
   }
 
   changeVisiblity() {

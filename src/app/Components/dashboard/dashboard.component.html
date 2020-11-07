@@ -1,8 +1,9 @@
 <div fxLayout="row">
     <mat-toolbar class="header">
-        <button mat-icon-button (click)="drawer.toggle()">
+        <button mat-icon-button (click)="drawer.toggle()" (click)="changeVisiblity()">
       <mat-icon>menu</mat-icon>
     </button>
+        <img src="../../../assets/images/keep.png">
         <span>Fundoo Note</span>
         <mat-card class="input-card">
             <mat-icon>search</mat-icon>
@@ -22,19 +23,43 @@
                 <div>Name: {{name}}</div>
                 <div>Email: {{email}}</div>
                 <div fxLayout="row wrap" fxLayoutAlign="end ">
-                    <button mat-stroked-button type="submit" (click)="logout()">logout</button>
+                    <button>logout</button>
                 </div>
             </div>
         </mat-menu>
     </mat-toolbar>
 </div>
-
+<mat-drawer-container class="container" autosize>
+    <div>
+        <div fxFlex="10%">
+            <span class="nav" *ngIf="checkVisiblity()" (mouseleave)="changeVisiblity()">
+        <button mat-icon-button>
+          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">emoji_objects</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">notifications</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">create</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">archive</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon (mouseenter)="drawer.toggle()" class="material-icons-outlined">delete</mat-icon>
+        </button>
+      </span>
+        </div>
+    </div>
+</mat-drawer-container>
 <mat-drawer #drawer class="sidenav" mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity()" class="slider">
     <mat-selection-list [multiple]="false">
-        <mat-list-option>Note</mat-list-option>
+        <mat-list-option class="option">
+            Notes
+        </mat-list-option>
         <mat-list-option>Reminder</mat-list-option>
         <mat-list-option>Edit lable</mat-list-option>
-        <mat-list-option>Archive</mat-list-option>
-        <mat-list-option>Bin</mat-list-option>
+        <mat-list-option class="option">Archive</mat-list-option>
+        <mat-list-option class="option">Bin</mat-list-option>
     </mat-selection-list>
 </mat-drawer>

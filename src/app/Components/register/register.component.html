@@ -1,8 +1,8 @@
 <div fxLayout="row wrap " fxLayoutAlign="center center" class="main">
     <div fxLayout="row" fxLayoutGap="10">
         <mat-card class="card">
-            <div fxFlex="70%" class="page">
-                <div class="fundoo" fxLayoutAlign.xs="center center">
+            <div fxFlex="70%">
+                <div class="fundoo">
                     <span class="blue">F</span>
                     <span class="red">u</span>
                     <span class="yellow">n</span>
@@ -10,9 +10,9 @@
                     <span class="green">o</span>
                     <span class="red">o</span>
                 </div>
-                <div class="heading" fxLayoutAlign.xs="center center">Create your account</div>
+                <div class="heading">Create your account</div>
                 <form (ngSubmit)="register()">
-                    <div fxLayout.xs="column">
+                    <div>
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label>First Name</mat-label>
                             <input matInput type="text" [formControl]="FirstName" autocomplete="off" required>
@@ -38,10 +38,12 @@
                             </mat-error>
                         </mat-form-field>
                     </div>
-                    <div fxLayout.xs="column">
+                    <div>
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label for="password">Password</mat-label>
                             <input matInput [type]="hide ? 'password' : 'text'" [formControl]="Password" autocomplete="off" required>
+                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+                            </mat-icon>
                             <mat-error *ngIf="Password.invalid">
                                 {{getPasswordErrorMsg()}}
                             </mat-error>
@@ -57,14 +59,14 @@
                         </mat-form-field>
                     </div>
                     <div>
-                        <span fxLayout="row" fxLayoutAlign="space-between end" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+                        <span fxLayout="row" fxLayoutAlign="space-between center">
                         <a routerLink="/login" class="signin">sign In instead</a>
                             <button type="submit" mat-flat-button color="primary">Next</button>
                         </span>
                     </div>
                 </form>
             </div>
-            <div fxFlex="30%" fxLayoutAlign="center center" fxShow.xs="false" fxShow="true">
+            <div fxFlex="30%" fxLayoutAlign="center center">
                 <img src="../../../assets/images/account.svg" class="image">
             </div>
         </mat-card>

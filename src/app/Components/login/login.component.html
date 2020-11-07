@@ -1,6 +1,6 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center" class="main">
-    <div fxLayout="row" fxLayoutGap="10" fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
-        <mat-card class="card" fxLayoutAlign.xs="center center" fxLayoutAlign.sm="center center">
+    <div fxLayout="row" fxLayoutGap="10" fxFlex="25%" fxFlex.xs="100" fxFlex.sm="33">
+        <mat-card class="card" fxLayoutAlign.xs="center center" fxLayoutAlign.sm="center center" box-shadow.xs="none">
             <form (ngSubmit)="login()">
                 <div class="fundoo" fxLayout="row" fxLayoutAlign="center center">
                     <span class="blue">F</span>
@@ -37,7 +37,7 @@
                     <a routerLink="/forgotPassword" class="signin">forgot password</a>
 
                 </div>
-                <span fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between end">
+                <span fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between center">
                     <a routerLink="/register" class="signin">sign up instead</a>
                     <button type="submit" mat-flat-button color="primary">Login</button>
                 </span>

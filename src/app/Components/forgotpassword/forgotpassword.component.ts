@@ -16,18 +16,22 @@ export class ForgotpasswordComponent implements OnInit {
         Validators.email]
     })
   }
+
   onSubmit() {
     let userData = {
       "email": this.form.controls.emailFormControl.value,
     }
+
     console.log(userData)
-    this.userService.forgotPassword(userData).subscribe((result: any) => {
-      this.snackBar.open("reset password link is send on mail", 'success')
-      console.log(result)
-    }, (error) => {
-      this.snackBar.open("password can not be reset", 'failed')
-      console.log(error)
-    })
+    if (this.form.valid) {
+      this.userService.forgotPassword(userData).subscribe((result: any) => {
+        this.snackBar.open("reset password link is send on mail", 'success')
+        console.log(result)
+      }, (error) => {
+        this.snackBar.open("password can not be reset", 'failed')
+        console.log(error)
+      })
+    }
   }
   ngOnInit(): void {
   }

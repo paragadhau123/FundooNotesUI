@@ -12,5 +12,6 @@ export class HttpServiceService {
   post(url, data, isHeaderRequired = false, headers = null) {
     return this.httpclient.post(url, data, isHeaderRequired && headers)
   }
+ 
 
 }

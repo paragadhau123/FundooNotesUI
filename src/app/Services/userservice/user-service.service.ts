@@ -26,8 +26,6 @@ export class UserServiceService {
   }
 
   resetPassword(data) {
-    let options =
-      { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Token': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaGF1cGFyYWc2NEBnbWFpbC5jb20iLCJpZCI6IjVmOTVjNDM5MzE0MDI4NjYxYTYxZTMxMyIsImV4cCI6MTYwNDU2NjkxM30.sYex-ySpGi286R3PYHD2Q003dphtfyB60TD9PWv4r_A' }) }
-    return this.httpService.post(`${this.baseUrl}Accounts/ResetPassword`, data, true, options);
+    return this.httpService.post(`${this.baseUrl}Accounts/ResetPassword`, data, true, { headers: { 'Authorization': localStorage.getItem('Token') } });
   }
 }

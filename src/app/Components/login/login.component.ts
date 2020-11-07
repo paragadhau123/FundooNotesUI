@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from '../../Services/userservice/user-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginComponent implements OnInit {
   hide = true;
   errors;
-  constructor(private user: UserServiceService, public snackBar: MatSnackBar, ) { }
+  constructor(private user: UserServiceService, public snackBar: MatSnackBar, public route: Router) { }
 
   Email = new FormControl('', [Validators.email, Validators.required]);
   Password = new FormControl('', [
@@ -33,18 +35,28 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {      
-      let userData = {
-        "email": this.Email.value,
-        "password": this.Password.value
-      }
-      console.log(userData)
-      this.user.login(userData).subscribe((result: any) => {
-        this.snackBar.open("login successfully.", 'cancle')
-        console.log(result)
-      }, (error) => {
-        this.snackBar.open("login unsuccessfull.", 'failed')
-        console.log(error)
-      })
+  login() {
+    let userData = {
+      "email": this.Email.value,
+      "password": this.Password.value
     }
+    if(this.Email.valid && this.Password.valid){
+    this.user.login(userData).subscribe(response => {
+      localStorage.setItem("Token", response['data']['token'])
+      localStorage.setItem("EmployeeFirstName", response['data']['employeeFirstName'])
+      localStorage.setItem("Email", response['data']['email'])
+      console.log(response)
+      console.log(localStorage.getItem("Token"))
+      console.log(localStorage.getItem("EmployeeFirstName"))
+      console.log(localStorage.getItem("Email"))
+      if (response['Token']) {
+        this.snackBar.open("login successfully.", 'success')
+        this.route.navigate(['dashboard'])
+      }
+    },
+      error => {
+        this.snackBar.open("login unsuccessfully.", 'failed')
+      })
   }
+}
+}
