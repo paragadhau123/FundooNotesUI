@@ -13,12 +13,13 @@
         </mat-card>
         <span class="settings"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon class="material-icons-outlined">account_circle</mat-icon>
+      <!-- <mat-icon class="material-icons-outlined">account_circle</mat-icon> -->
+      <img class="img" src="../../../assets/images/mm.jpg" alt="Avatar">
     </button>
-        <mat-menu #menu="matMenu">
+        <mat-menu #menu="matMenu" class="menu">
             <div class="userDetail">
                 <div fxLayout="row wrap" fxLayoutAlign="center">
-                    <mat-icon class="material-icons-outlined">account_circle</mat-icon>
+                    <img class="img" src="../../../assets/images/mm.jpg" alt="Avatar">
                 </div>
                 <div fxLayoutAlign="center" class="name">{{name}}</div>
                 <div fxLayoutAlign="center" class="email">{{email}}</div>
@@ -28,6 +29,7 @@
             </div>
         </mat-menu>
     </mat-toolbar>
+
 </div>
 <mat-drawer-container class="container" autosize>
     <div>
@@ -50,19 +52,22 @@
         </button>
       </span>
         </div>
-        <div fxFlex="90%" fxLayoutAlign="center " class="content">
-            <router-outlet></router-outlet>
+        <div fxFlex="90%" fxLayoutAlign="center start" class="content">
+            <app-createnotes>
+            </app-createnotes>
         </div>
     </div>
 </mat-drawer-container>
 <mat-drawer #drawer class="sidenav" mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity()" class="slider">
     <mat-selection-list [multiple]="false">
         <mat-list-option class="option" routerLink="/dashboard/notes" #note [selected]="note">
+            <!-- <mat-icon class=" material-icons-outlined " fxFlex="column">emoji_objects</mat-icon> -->
             Notes
         </mat-list-option>
         <mat-list-option>Reminder</mat-list-option>
         <mat-list-option>Edit lable</mat-list-option>
-        <mat-list-option class="option">Archive</mat-list-option>
-        <mat-list-option class="option">Bin</mat-list-option>
+        <mat-list-option class="option ">Archive</mat-list-option>
+        <mat-list-option class="option ">Bin</mat-list-option>
     </mat-selection-list>
+
 </mat-drawer>

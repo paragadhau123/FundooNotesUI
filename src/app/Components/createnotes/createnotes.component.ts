@@ -27,15 +27,16 @@ export class CreatenotesComponent implements OnInit {
       "description": this.description.value
     }
     this.note.addNotes(noteData).subscribe(response => {
-      if (response['status'].success == true) {
-        this.snackBar.open("note added successfully", 'success')
+      if (this.title.valid && this.description.valid) {
+        if (response['status'].success == true) {
+          this.snackBar.open("Note added successfully", 'cancle')
+        }
       }
     },
       error => {
-        this.snackBar.open("unable to add plz try again", 'failed')
+        this.snackBar.open("Note is not added succesfully", 'cancle')
       }
     )
-
   }
 
   changeNotePinned() {
