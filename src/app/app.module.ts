@@ -24,6 +24,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatMenuModule } from '@angular/material/menu';
+import { CreatenotesComponent } from './components/createnotes/createnotes.component';
+import { GetnotesComponent } from './components/getnotes/getnotes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { MatMenuModule } from '@angular/material/menu';
     ForgotpasswordComponent,
     ResetpasswordComponent,
     DashboardComponent,
+    CreatenotesComponent,
+    GetnotesComponent,
   ],
   imports: [
     BrowserModule,
