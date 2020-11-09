@@ -32,7 +32,7 @@
                         <mat-form-field class="name-field" appearance="outline">
                             <mat-label>Username</mat-label>
                             <input matInput type="text" [formControl]="Email" autocomplete="off" required>
-                            <mat-hint>You can use letter, number & period</mat-hint>
+                            <mat-hint class="hint">You can use letter, number & period</mat-hint>
                             <mat-error *ngIf="Email.invalid">
                                 {{getEmailErrorMsg()}}
                             </mat-error>

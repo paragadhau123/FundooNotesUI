@@ -20,10 +20,10 @@
                 <div fxLayout="row wrap" fxLayoutAlign="center">
                     <mat-icon class="material-icons-outlined">account_circle</mat-icon>
                 </div>
-                <div>Name: {{name}}</div>
-                <div>Email: {{email}}</div>
-                <div fxLayout="row wrap" fxLayoutAlign="end ">
-                    <button>logout</button>
+                <div fxLayoutAlign="center" class="name">{{name}}</div>
+                <div fxLayoutAlign="center" class="email">{{email}}</div>
+                <div fxLayout="row wrap" fxLayoutAlign="center">
+                    <button mat-stroked-button type="submit" (click)="logout()">Logout</button>
                 </div>
             </div>
         </mat-menu>
@@ -50,11 +50,14 @@
         </button>
       </span>
         </div>
+        <div fxFlex="90%" fxLayoutAlign="center " class="content">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </mat-drawer-container>
 <mat-drawer #drawer class="sidenav" mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity()" class="slider">
     <mat-selection-list [multiple]="false">
-        <mat-list-option class="option">
+        <mat-list-option class="option" routerLink="/dashboard/notes" #note [selected]="note">
             Notes
         </mat-list-option>
         <mat-list-option>Reminder</mat-list-option>

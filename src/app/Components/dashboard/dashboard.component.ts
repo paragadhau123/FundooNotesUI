@@ -12,11 +12,16 @@ export class DashboardComponent implements OnInit {
   showFiller = false;
   isButtonVisible = true;
   token = localStorage.getItem('token')
-  name = localStorage.getItem('name')
-  email = localStorage.getItem('email')
-  constructor(private http: UserServiceService, public snackBar: MatSnackBar, public route: Router) { }
+  name = localStorage.getItem('EmployeeFirstName')
+  email = localStorage.getItem('Email')
+  constructor( public snackBar: MatSnackBar, public route: Router) { }
 
   ngOnInit(): void {
+  }
+
+  logout() {    
+        this.snackBar.open("logout successfully.", 'cancle') 
+        this.route.navigate(['login'])    
   }
 
   changeVisiblity() {

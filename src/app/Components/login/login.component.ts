@@ -40,23 +40,22 @@ export class LoginComponent implements OnInit {
       "email": this.Email.value,
       "password": this.Password.value
     }
-    if(this.Email.valid && this.Password.valid){
-    this.user.login(userData).subscribe(response => {
-      localStorage.setItem("Token", response['data']['token'])
-      localStorage.setItem("EmployeeFirstName", response['data']['employeeFirstName'])
-      localStorage.setItem("Email", response['data']['email'])
-      console.log(response)
-      console.log(localStorage.getItem("Token"))
-      console.log(localStorage.getItem("EmployeeFirstName"))
-      console.log(localStorage.getItem("Email"))
-      if (response['Token']) {
+    if (this.Email.valid && this.Password.valid) {
+      this.user.login(userData).subscribe(response => {
+        localStorage.setItem("Token", response['data']['token'])
+        localStorage.setItem("EmployeeFirstName", response['data']['employeeFirstName'])
+        localStorage.setItem("Email", response['data']['email'])
+        console.log(response)
+        console.log(localStorage.getItem("Token"))
+        console.log(localStorage.getItem("EmployeeFirstName"))
+        console.log(localStorage.getItem("Email"))
+
         this.snackBar.open("login successfully.", 'success')
         this.route.navigate(['dashboard'])
-      }
-    },
-      error => {
-        this.snackBar.open("login unsuccessfully.", 'failed')
-      })
+      },
+        error => {
+          this.snackBar.open("login unsuccessfully.", 'failed')
+        })
+    }
   }
-}
 }

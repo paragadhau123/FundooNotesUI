@@ -1,10 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';  
+import { Injectable } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from "../../Services/userservice/user-service.service";
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-resetpassword',
   templateUrl: './resetpassword.component.html',
   styleUrls: ['./resetpassword.component.scss']
+})
+@Injectable({
+  providedIn: 'root'
 })
 export class ResetpasswordComponent implements OnInit {
   hide = true;
@@ -20,15 +26,17 @@ export class ResetpasswordComponent implements OnInit {
       ? 'Password is Required'
       : 'please enter valid Password';
   }
-  constructor( private user:UserServiceService) {}
+  constructor( private user:UserServiceService,private route: ActivatedRoute) {}
  
   ngOnInit(): void {
+   
   }
+  
   onSubmit() {
     let userData = {
       "newPassword": this.Password.value,
-     
     }
+
     if(this.Password.valid){
     this.user.resetPassword(userData).subscribe((result: any) => {
       console.log(result)     

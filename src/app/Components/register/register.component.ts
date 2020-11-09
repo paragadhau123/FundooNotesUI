@@ -68,10 +68,10 @@ export class RegisterComponent implements OnInit {
     }
     if(this.FirstName.valid && this.LastName.valid && this.Email.valid && this.Password.valid && this.ConfirmPassword.valid){
       this.user.register(userdata).subscribe(response => {
-        if (response['data'].success == true) {
+        
           this.snackBar.open("register successfully", 'cancle')
           this.route.navigate(['login'])
-        }
+        
       },
         error => {
           this.snackBar.open("login unsuccessfully.", 'cancle')

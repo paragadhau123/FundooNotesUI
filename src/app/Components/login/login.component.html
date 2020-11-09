@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center" class="main">
-    <div fxLayout="row" fxLayoutGap="10" fxFlex="25%" fxFlex.xs="100" fxFlex.sm="33">
+    <div fxLayout="row" fxLayoutGap="10" fxFlex="25" fxLayoutAlign="center center" fxFlex.xs="100" fxFlex.sm="33">
         <mat-card class="card" fxLayoutAlign.xs="center center" fxLayoutAlign.sm="center center" box-shadow.xs="none">
             <form (ngSubmit)="login()">
                 <div class="fundoo" fxLayout="row" fxLayoutAlign="center center">
@@ -11,33 +11,33 @@
                     <span class="red">o</span>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="center center" class="heading">Login </div>
-                <form>
-                    <div>
-                        <mat-form-field class="login-form-field" appearance="outline">
-                            <mat-label>UserName</mat-label>
-                            <input matInput type="text" [formControl]="Email" autocomplete="off" required>
-                            <mat-error *ngIf="Email.invalid">
-                                {{getEmailErrorMessage()}}
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div>
-                        <mat-form-field class="login-form-field" appearance="outline">
-                            <mat-label>Password</mat-label>
-                            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="Password" autocomplete="off" required>
-                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
-                            </mat-icon>
-                            <mat-error *ngIf="Password.invalid">
-                                {{ getPasswordErrorMessage() }}
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-                </form>
-                <div fxLayout="column" fxLayoutAlign="space-around none" fxLayoutAlign.xs="center center">
+
+                <div>
+                    <mat-form-field class="login-form-field" appearance="outline">
+                        <mat-label>UserName</mat-label>
+                        <input matInput type="text" [formControl]="Email" autocomplete="off" required>
+                        <mat-error *ngIf="Email.invalid">
+                            {{getEmailErrorMessage()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="login-form-field" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="Password" autocomplete="off" required>
+                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+                        </mat-icon>
+                        <mat-error *ngIf="Password.invalid">
+                            {{ getPasswordErrorMessage() }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="column" fxLayoutAlign="space-around none" fxLayoutAlign.xs="space-around none">
                     <a routerLink="/forgotPassword" class="signin">forgot password</a>
 
                 </div>
-                <span fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="center center" fxLayoutAlign="space-between center">
+                <span fxLayout="row" fxLayout.xs="row" fxLayoutAlign.xs="space-between center" fxLayoutAlign="space-between center">
                     <a routerLink="/register" class="signin">sign up instead</a>
                     <button type="submit" mat-flat-button color="primary">Login</button>
                 </span>
