@@ -6,13 +6,12 @@
                     <input matInput placeholder="Take a note..." autocomplete="off">
                 </mat-form-field>
                 <img class="material-icons-outlined" src="../../../assets/images/download.svg">
-
                 <mat-icon class="material-icons-outlined">create</mat-icon>
                 <mat-icon class="material-icons-outlined">perm_media</mat-icon>
             </mat-card>
             <mat-card *ngIf="!reset" class="back-card">
                 <form>
-                    <mat-form-field appearance="none">
+                    <mat-form-field appearance="none" class="input">
                         <input matInput autocomplete="off" placeholder="Title" [formControl]="title">
                     </mat-form-field>
                     <button mat-icon-button>
@@ -20,13 +19,12 @@
               {{!notePinned ? 'push_pin':'done'}}
             </mat-icon>
           </button>
-                    <mat-form-field appearance="none">
-                        <input matInput placeholder="Take a note" autocomplete="off" autofocus [formControl]="description">
+                    <mat-form-field appearance="none" class="input">
+                        <input matInput placeholder="Take a note" autocomplete="off" autofocus [formControl]="message">
                     </mat-form-field>
-                    <span fxLayout="row" fxLayoutAlign="end end">
-            <app-card-pannel></app-card-pannel>
-            <span class="settings"></span>
-                    <button type="button" mat-button (click)="addNote()" (click)="reset=true" (click)="UpdateNoteComponent()">close</button>
+                    <span fxLayout="row" fxLayoutAlign="space-between start" class="div">
+                    <app-icons></app-icons>                    
+                    <button type="button" mat-button (click)="addNote()" >close</button>
                     </span>
                 </form>
             </mat-card>

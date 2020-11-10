@@ -26,6 +26,8 @@ import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { CreatenotesComponent } from './components/createnotes/createnotes.component';
 import { GetnotesComponent } from './components/getnotes/getnotes.component';
+import { IconsComponent } from './components/icons/icons.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,7 @@ import { GetnotesComponent } from './components/getnotes/getnotes.component';
     DashboardComponent,
     CreatenotesComponent,
     GetnotesComponent,
+    IconsComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { GetnotesComponent } from './components/getnotes/getnotes.component';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

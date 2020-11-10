@@ -19,53 +19,53 @@
         <mat-menu #menu="matMenu" class="menu">
             <div class="userDetail">
                 <div fxLayout="row wrap" fxLayoutAlign="center">
-                    <img class="img" src="../../../assets/images/mm.jpg" alt="Avatar">
+                    <img class="img" src=" ../../../assets/images/mm.jpg " alt="Avatar ">
                 </div>
-                <div fxLayoutAlign="center" class="name">{{name}}</div>
-                <div fxLayoutAlign="center" class="email">{{email}}</div>
-                <div fxLayout="row wrap" fxLayoutAlign="center">
-                    <button mat-stroked-button type="submit" (click)="logout()">Logout</button>
+                <div fxLayoutAlign="center " class="name ">{{name}}</div>
+                <div fxLayoutAlign="center " class="email ">{{email}}</div>
+                <div fxLayout="row wrap " fxLayoutAlign="center ">
+                    <button mat-stroked-button type="submit " (click)="logout() ">Logout</button>
                 </div>
             </div>
         </mat-menu>
     </mat-toolbar>
 
 </div>
-<mat-drawer-container class="container" autosize>
+<mat-drawer-container class="container " autosize>
     <div>
-        <div fxFlex="10%">
-            <span class="nav" *ngIf="checkVisiblity()" (mouseleave)="changeVisiblity()">
+        <div fxFlex="10% ">
+            <span class="nav " *ngIf="checkVisiblity() " (mouseleave)="changeVisiblity() ">
         <button mat-icon-button>
-          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">emoji_objects</mat-icon>
+          <mat-icon class="material-icons-outlined " (mouseenter)="drawer.toggle() ">emoji_objects</mat-icon>
         </button>
         <button mat-icon-button>
-          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">notifications</mat-icon>
+          <mat-icon class="material-icons-outlined " (mouseenter)="drawer.toggle() ">notifications</mat-icon>
         </button>
         <button mat-icon-button>
-          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">create</mat-icon>
+          <mat-icon class="material-icons-outlined " (mouseenter)="drawer.toggle() ">create</mat-icon>
         </button>
         <button mat-icon-button>
-          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">archive</mat-icon>
+          <mat-icon class="material-icons-outlined " (mouseenter)="drawer.toggle() ">archive</mat-icon>
         </button>
         <button mat-icon-button>
-          <mat-icon (mouseenter)="drawer.toggle()" class="material-icons-outlined">delete</mat-icon>
+          <mat-icon (mouseenter)="drawer.toggle() " class="material-icons-outlined ">delete</mat-icon>
         </button>
       </span>
         </div>
-        <div fxFlex="90%" fxLayoutAlign="center start" class="content">
+        <div fxFlex="90% " fxLayoutAlign="center start " class="content ">
             <app-createnotes>
             </app-createnotes>
         </div>
     </div>
 </mat-drawer-container>
-<mat-drawer #drawer class="sidenav" mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity()" class="slider">
-    <mat-selection-list [multiple]="false">
-        <mat-list-option class="option" routerLink="/dashboard/notes" #note [selected]="note">
-            <!-- <mat-icon class=" material-icons-outlined " fxFlex="column">emoji_objects</mat-icon> -->
+<mat-drawer #drawer class="sidenav " mode="side " (mouseleave)="drawer.toggle() " (mouseleave)="changeVisiblity() " class="slider ">
+    <mat-selection-list [multiple]="false ">
+        <mat-list-option class="option " routerLink="/dashboard/notes " #note [selected]="note ">
+            <!-- <mat-icon class=" material-icons-outlined " fxFlex="column ">emoji_objects</mat-icon> -->
             Notes
         </mat-list-option>
-        <mat-list-option>Reminder</mat-list-option>
-        <mat-list-option>Edit lable</mat-list-option>
+        <mat-list-option class="option ">Reminder</mat-list-option>
+        <mat-list-option class="option ">Edit lable</mat-list-option>
         <mat-list-option class="option ">Archive</mat-list-option>
         <mat-list-option class="option ">Bin</mat-list-option>
     </mat-selection-list>
