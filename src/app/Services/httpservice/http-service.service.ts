@@ -12,6 +12,9 @@ export class HttpServiceService {
   post(url, data, isHeaderRequired = false, headers = null) {
     return this.httpclient.post(url, data, isHeaderRequired && headers)
   }
- 
+  
+  get(url,isHeaderRequired=false, header=null){
+    return this.httpclient.get(url,isHeaderRequired && header)
+    }
 
 }

@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:"forgotPassword",component:ForgotpasswordComponent},
   {path:"resetPassword/:token",component:ResetpasswordComponent},
   {path:"dashboard",component:DashboardComponent ,canActivate: [AuthGuard]},
-{path:"",component:GetnotesComponent}
+{path:"notes",component:GetnotesComponent}
 ];
 
 @NgModule({

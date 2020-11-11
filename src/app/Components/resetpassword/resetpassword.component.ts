@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './resetpassword.component.html',
   styleUrls: ['./resetpassword.component.scss']
 })
+
 @Injectable({
   providedIn: 'root'
 })

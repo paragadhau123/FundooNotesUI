@@ -1,13 +1,13 @@
-<div fxLayout="row wrap " fxLayoutGap="20px">
+<!-- <div fxLayout="row wrap " fxLayoutGap="20px">
     <mat-card class="card" appearance="outline">
-        <div>
+        <div (click)="openDialog(n.title,n.description,note.id)">
             <mat-card-content>
                 <mat-card-title>
-
+                    {{note.title}}
                 </mat-card-title>
                 <mat-card-title>
                     <mat-card-content>
-
+                        {{note.description}}
                     </mat-card-content>
                 </mat-card-title>
             </mat-card-content>
@@ -24,4 +24,20 @@
     <div>
         Notes you add appear here
     </div>
+</div> -->
+<div fxLayout="row" fxLayoutAlign="space-between start" *ngFor="let note of note">
+    <mat-card class="MatCard">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            {{note.title}}
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            {{note.message}}
+        </div>
+        <mat-card-content>
+            <span class="pannel">
+          <app-icons></app-icons>
+        </span>
+        </mat-card-content>
+    </mat-card>
 </div>
