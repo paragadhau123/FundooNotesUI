@@ -1,0 +1,30 @@
+.card {
+    max-width: 400px;
+    min-width: 250px;
+    max-height: 250px;
+    min-height: 180px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: black 3px;
+}
+
+.disabled {
+    font-size: 20px;
+    padding-top: 200px;
+    color: gray;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    ;
+}
+
+.mat-card-title {
+    font-size: 18px;
+}
+
+.mat-card-content {
+    font-size: 13px;
+}

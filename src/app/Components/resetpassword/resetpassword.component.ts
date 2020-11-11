@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResetpasswordComponent implements OnInit {
   hide = true;
-
+  
   errors;
   Password = new FormControl('', [
     Validators.minLength(8),
@@ -26,19 +26,23 @@ export class ResetpasswordComponent implements OnInit {
       ? 'Password is Required'
       : 'please enter valid Password';
   }
+  
   constructor( private user:UserServiceService,private route: ActivatedRoute) {}
- 
+  
   ngOnInit(): void {
    
   }
   
-  onSubmit() {
+  onSubmit() {  
+    let token = this.route.snapshot.params.token;
+    console.log(token);    
     let userData = {
       "newPassword": this.Password.value,
     }
 
-    if(this.Password.valid){
-    this.user.resetPassword(userData).subscribe((result: any) => {
+    if(this.Password.valid ){
+   
+    this.user.resetPassword(userData,token).subscribe((result: any) => {
       console.log(result)     
     },
     (error) => {

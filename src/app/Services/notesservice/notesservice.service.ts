@@ -13,7 +13,9 @@ export class NotesserviceService {
 
   addNotes(data) {
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('Token') }) }
-    return this.httpService.post(`${this.baseUrl}Notes/AddNote`, data,true,options);
+    return this.httpService.post(`${this.baseUrl}Notes/AddNote`, data,true,options);    
+  }
+  getNotes(){
     
   }
 }
