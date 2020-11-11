@@ -15,7 +15,7 @@ export class CreatenotesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  title = new FormControl();
+  title = new FormControl(); 
   message = new FormControl();
   notePinned = false;
   card = false;

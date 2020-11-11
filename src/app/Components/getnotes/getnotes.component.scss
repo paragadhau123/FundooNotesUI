@@ -1,130 +1,28 @@
-                            // .card {
-                            //     max-width: 400px;
-                            //     min-width: 250px;
-                            //     max-height: 250px;
-                            //     min-height: 180px;
-                            //     margin-top: 20px;
-                            //     border-radius: 10px;
-                            //     border: black 3px;
-                            // }
-                            // .disabled {
-                            //     font-size: 20px;
-                            //     padding-top: 200px;
-                            //     color: gray;
-                            //     pointer-events: none;
-                            //     opacity: 0.4;
-                            // }
-                            // .card:hover {
-                            //     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                            //     ;
-                            // }
-                            // .mat-card-title {
-                            //     font-size: 18px;
-                            // }
-                            // .mat-card-content {
-                            //     font-size: 13px;
-                            // }
-                            .MatCard {
-                                margin-top: 120px;
-                                margin-right: 0%;
-                                width: 220px;
-                                height: 120px;
-                                border-radius: 8px;
-                            }
-                            
-                            .MatCard1 {
-                                margin-top: 15px;
-                                margin-right: 600px;
-                                width: 220px;
-                                height: 120px;
-                                color: red;
-                                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                            }
-                            
-                            .Title {
-                                width: auto;
-                                height: 30px;
-                                border: none;
-                                outline: none;
-                            }
-                            
-                            .Buttons {
-                                border: none;
-                                background-color: white;
-                                outline: none;
-                                color: rgb(59, 59, 59);
-                                padding-right: 15px;
-                                padding-left: 0px;
-                            }
-                            
-                            @media screen and (max-width:1000px) {
-                                .MatCard {
-                                    margin-right: 400px;
-                                }
-                                .MatCard1 {
-                                    margin-right: 400px;
-                                }
-                            }
-                            
-                            .MatCard1new {
-                                width: 600px;
-                                height: 110px;
-                                margin-top: 30px;
-                                background-color: rgb(255, 254, 254);
-                                font-weight: bold;
-                                color: rgb(179, 179, 179);
-                                border: none;
-                                outline: none;
-                                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                                border-radius: 10px;
-                                backdrop-filter: blur(5px);
-                            }
-                            
-                            .MatCard:hover {
-                                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                                ;
-                            }
-                            
-                            .MainContainer {
-                                color: red;
-                                background-color: red;
-                            }
-                            
-                            .CloseButton {
-                                background-color: white;
-                                border: none;
-                                font-size: larger;
-                                font-weight: bold;
-                                color: rgb(139, 139, 139);
-                                padding-left: 310px;
-                                outline: none;
-                            }
-                            
-                            @media screen and (max-width:750px) {
-                                .MatCard {
-                                    margin-right: 0%;
-                                    width: 300px;
-                                    height: 110px;
-                                }
-                                .MatCard1 {
-                                    margin-right: 0%;
-                                    width: 300px;
-                                    height: 120px;
-                                }
-                            }
-                            
-                            @media screen and (max-width:600px) {
-                                .Buttons {
-                                    padding-right: 4px;
-                                }
-                                .MatCard {
-                                    margin-right: 0%;
-                                    width: 200px;
-                                    height: 80px;
-                                }
-                                .MatCard1 {
-                                    margin-right: 0%;
-                                    width: 200px;
-                                    height: 80px;
-                                }
-                            }
+.card {   
+    min-width: 200px;  
+    min-height: 100px;
+    // margin-top: 20px;
+    border-radius: 10px;
+    border: black 3px;
+}
+
+.disabled {
+    font-size: 40px;
+    padding-top: 200px;
+    color: gray;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    ;
+}
+
+.mat-card-title {
+    font-size: 18px;
+}
+
+.mat-card-content {
+    font-size: 13px;
+}

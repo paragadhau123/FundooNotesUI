@@ -1,42 +1,44 @@
-.back-card .mat-form-field {
-    width: 90%;
-    height: 7px;
-}
-
-.front-card {
-    display: flex;
-    align-items: center;
-    width: 600px;
-    height: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.back-card {
-    width: 500px;
-    border-radius: 10px;
-}
-
-.mat-icon {
-    cursor: pointer;
-}
-
-.settings {
-    flex: 1 1 auto;
-}
-
-.mat-form-field {
-    width: 90%;
-}
-
-.material-icons-outlined {
-    padding: 0px 10px 0px 10px;
-}
-
-.div {
-    margin-top: 8px;
-}
-
-.input {
-    margin-left: 9px;
-}
+        .back-card .mat-form-field {
+            width: 90%;
+            height: 7px;
+        }
+        
+        .front-card {
+            display: flex;
+            align-items: center;
+            width: 600px;
+            height: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-top: 100px;
+        }
+        
+        .back-card {
+            width: 500px;
+            border-radius: 10px;
+            margin-top: 200px;
+        }
+        
+        .mat-icon {
+            cursor: pointer;
+        }
+        
+        .settings {
+            flex: 1 1 auto;
+        }
+        
+        .mat-form-field {
+            width: 90%;
+        }
+        
+        .material-icons-outlined {
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .div {
+            margin-top: 8px;
+        }
+        
+        .input {
+            margin-left: 9px;
+        }

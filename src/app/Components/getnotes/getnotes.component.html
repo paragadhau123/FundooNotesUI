@@ -1,43 +1,27 @@
-<!-- <div fxLayout="row wrap " fxLayoutGap="20px">
-    <mat-card class="card" appearance="outline">
-        <div (click)="openDialog(n.title,n.description,note.id)">
+<div fxLayout="row wrap " fxLayoutGap="20px" *ngIf="!nonoteCondition"  fxLayout="row" fxLayoutAlign="space-around center" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.xs="center start">
+    <mat-card class="card" *ngFor="let note of note; let i=index"  appearance="outline" (mouseenter)="onHover(i)" (mouseleave)="onHover(-1)" [style.background]="note.color">
+        <div >
             <mat-card-content>
                 <mat-card-title>
                     {{note.title}}
                 </mat-card-title>
                 <mat-card-title>
                     <mat-card-content>
-                        {{note.description}}
+                        {{note.message}}
                     </mat-card-content>
                 </mat-card-title>
             </mat-card-content>
         </div>
         <mat-card-content>
-            <span class="pannel">
-          <app-icons></app-icons>
+            <span [hidden]="!(hoverIndex==i)" class="pannel">
+          <app-icons [noteId]="note.id"></app-icons>
         </span>
         </mat-card-content>
     </mat-card>
 </div>
-<div fxLayout="column " fxLayoutAlign="space-between center" class="disabled ">
-    <img src="../../../assets/images/bb.svg " alt="icon ">
+<div *ngIf="noNote()" fxLayout="row" fxLayoutAlign="center center" class="disabled">
+    <img src="../../../assets/images/keep.png" alt="icon">
     <div>
-        Notes you add appear here
+        no note to display
     </div>
-</div> -->
-<div fxLayout="row" fxLayoutAlign="space-between start" *ngFor="let note of note">
-    <mat-card class="MatCard">
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-            {{note.title}}
-        </div>
-
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-            {{note.message}}
-        </div>
-        <mat-card-content>
-            <span class="pannel">
-          <app-icons></app-icons>
-        </span>
-        </mat-card-content>
-    </mat-card>
 </div>

@@ -21,9 +21,9 @@
                 <div fxLayout="row wrap" fxLayoutAlign="center">
                     <img class="img" src=" ../../../assets/images/mm.jpg " alt="Avatar ">
                 </div>
-                <div fxLayoutAlign="center " class="name ">{{name}}</div>
-                <div fxLayoutAlign="center " class="email ">{{email}}</div>
-                <div fxLayout="row wrap " fxLayoutAlign="center ">
+                <div fxLayoutAlign="center" class="name">{{name}}</div>
+                <div fxLayoutAlign="center" class="email">{{email}}</div>
+                <div fxLayout="row wrap " fxLayoutAlign="center">
                     <button mat-stroked-button type="submit " (click)="logout() ">Logout</button>
                 </div>
             </div>
@@ -31,7 +31,7 @@
     </mat-toolbar>
 
 </div>
-<mat-drawer-container class="container " autosize>
+<mat-drawer-container class="container">
     <div>
         <div fxFlex="10% ">
             <span class="nav " *ngIf="checkVisiblity() " (mouseleave)="changeVisiblity() ">
@@ -52,14 +52,14 @@
         </button>
       </span>
         </div>
-        <div fxFlex="row" fxFlex="90%" fxLayoutAlign="center start " class="content ">
-            <app-createnotes>
-            </app-createnotes>
-            <div>
+        <div fxFlex="column" fxFlex="90%" class="content " fxLayout="column wrap" fxLayoutGap="70px grid">
+            <div fxFlex="20" fxLayoutAlign="center center">
+                <app-createnotes>
+                </app-createnotes>
+            </div>
+            <div fxFlex="80" fxLayoutAlign="center center ">
                 <app-getnotes></app-getnotes>
             </div>
-
-
         </div>
     </div>
 </mat-drawer-container>

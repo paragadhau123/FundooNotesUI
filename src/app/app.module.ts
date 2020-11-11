@@ -28,6 +28,7 @@ import { CreatenotesComponent } from './components/createnotes/createnotes.compo
 import { GetnotesComponent } from './components/getnotes/getnotes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +60,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
