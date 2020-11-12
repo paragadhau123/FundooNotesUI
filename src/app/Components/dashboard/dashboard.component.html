@@ -29,7 +29,6 @@
             </div>
         </mat-menu>
     </mat-toolbar>
-
 </div>
 <mat-drawer-container class="container">
     <div fxFlex.xs="90">
@@ -52,14 +51,7 @@
         </button>
       </span>
         </div>
-        <div fxFlex="column" fxFlex="90%" class="content " fxLayout="column wrap" fxLayoutGap="70px grid">
-            <!-- <div fxFlex="20" fxLayoutAlign="center center">
-                <app-createnotes>
-                </app-createnotes>
-            </div>
-            <div fxFlex="80" fxLayoutAlign="center center ">
-                <app-getnotes></app-getnotes>
-            </div> -->
+        <div fxFlex="column" fxFlex="90%" class="content " fxLayout="column wrap" fxLayoutGap="35px grid">
             <router-outlet>
             </router-outlet>
         </div>
@@ -76,5 +68,4 @@
         <mat-list-option class="option ">Archive</mat-list-option>
         <mat-list-option class="option ">Bin</mat-list-option>
     </mat-selection-list>
-
 </mat-drawer>
