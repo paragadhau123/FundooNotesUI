@@ -14,8 +14,13 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"forgotPassword",component:ForgotpasswordComponent},
   {path:"resetPassword/:token",component:ResetpasswordComponent},
-  {path:"dashboard",component:DashboardComponent ,canActivate: [AuthGuard]},
-{path:"notes",component:GetnotesComponent}
+  {path:"dashboard",component:DashboardComponent ,canActivate: [AuthGuard] ,
+  children: [
+    {
+        path: 'notes',
+        component: GetnotesComponent
+    },
+]   },
 ];
 
 @NgModule({

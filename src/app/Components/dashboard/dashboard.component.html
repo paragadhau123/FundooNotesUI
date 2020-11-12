@@ -53,13 +53,15 @@
       </span>
         </div>
         <div fxFlex="column" fxFlex="90%" class="content " fxLayout="column wrap" fxLayoutGap="70px grid">
-            <div fxFlex="20" fxLayoutAlign="center center">
+            <!-- <div fxFlex="20" fxLayoutAlign="center center">
                 <app-createnotes>
                 </app-createnotes>
             </div>
             <div fxFlex="80" fxLayoutAlign="center center ">
                 <app-getnotes></app-getnotes>
-            </div>
+            </div> -->
+            <router-outlet>
+            </router-outlet>
         </div>
     </div>
 </mat-drawer-container>

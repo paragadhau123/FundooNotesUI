@@ -1,0 +1,37 @@
+.card {   
+    min-width: 200px;  
+    min-height: 100px;
+    // margin-top: 20px;
+    border-radius: 10px;
+    border: black 3px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-around;
+     margin-top: 5%;
+}
+
+.disabled {
+    font-size: 40px;
+    padding-top: 200px;
+    color: gray;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    ;
+}
+
+.mat-card-title {
+    font-size: 18px;
+}
+
+.mat-card-content {
+    font-size: 13px;
+}
+@media only screen and (max-width: 520px) {
+    .card{
+        margin-left: 5%;
+    }
+}

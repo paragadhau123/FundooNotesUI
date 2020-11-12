@@ -23,7 +23,6 @@ export class DialognoteComponent implements OnInit {
   updateNote(){
     let noteData={
       "noteId":"5facce0ffe19a8865ba308f7",
-      "accountId":"5faa524208199019d116d620",
       "title": this.title,
       "message": this.message
     }

@@ -30,6 +30,7 @@ import { IconsComponent } from './components/icons/icons.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialognoteComponent } from './components/dialognote/dialognote.component';
+import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { DialognoteComponent } from './components/dialognote/dialognote.componen
     GetnotesComponent,
     IconsComponent,
     DialognoteComponent,
+    DisplaynotesComponent,
   ],
   imports: [
     BrowserModule,

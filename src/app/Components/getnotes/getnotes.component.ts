@@ -35,7 +35,7 @@ export class GetnotesComponent implements OnInit {
     return (this.note.length == 0) ? this.nonoteCondition = true : this.nonoteCondition = false;
   }
   
-  openDialog(title, message, noteId,accountId) {
-    this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId,accountId:accountId } });
+  openDialog(title, message, noteId) {
+    this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId} });
   }
 }
