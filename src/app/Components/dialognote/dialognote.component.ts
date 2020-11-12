@@ -22,14 +22,14 @@ export class DialognoteComponent implements OnInit {
 
   updateNote(){
     let noteData={
-      "noteId":"5facce0ffe19a8865ba308f7",
+      "noteId":this.data.noteId,
+      "accountId":this.data.accountId,
       "title": this.title,
       "message": this.message
     }
     console.log(noteData)
     this.noteService.updateNotes(noteData).subscribe(response => {
-        console.log(response)
-      
+        console.log(response)      
     },
       error => {
         console.log(error)

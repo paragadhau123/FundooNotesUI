@@ -10,15 +10,16 @@ import { DialognoteComponent } from '../dialognote/dialognote.component';
 export class DisplaynotesComponent implements OnInit {
   hoverIndex = -1
   nonoteCondition = false
-  constructor( public dialog: MatDialog) { }
-  @Input() notesArray:any
+  constructor(public dialog: MatDialog) { }
+  @Input() notesArray: any
   ngOnInit(): void {
   }
   onHover(i) {
     this.hoverIndex = i
   }
-  openDialog(title, message, noteId) {
-    this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId} });
+  openDialog(title, message, noteId, accountId) {
+    this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId, accountId: accountId } });
+    console.log(noteId);
   }
   noNote() {
     return (this.notesArray.length == 0) ? this.nonoteCondition = true : this.nonoteCondition = false;

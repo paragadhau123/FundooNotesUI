@@ -23,6 +23,6 @@ export class NotesserviceService {
 
   updateNotes(data){
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('Token') }) }
-    return this.httpService.put(`${this.baseUrl}Notes/5fabf9c2d862483354877fb3`,data,true,options)
+    return this.httpService.put(`${this.baseUrl}Notes/${data.noteId}`,data,true,options)
   }
 }
