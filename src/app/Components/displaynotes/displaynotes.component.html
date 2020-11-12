@@ -1,4 +1,4 @@
-<div fxLayout="row wrap " fxLayoutGap="10px" *ngIf="!nonoteCondition">
+<div fxLayout="row wrap " fxLayoutGap="10px" *ngIf="!nonoteCondition" class="lll">
     <mat-card class="card" *ngFor="let note of notesArray; let i=index"  appearance="outline" (mouseenter)="onHover(i)" (mouseleave)="onHover(-1)" [style.background]="note.color">
         <div (click)="openDialog(note.title,note.message,note.id)">
             <mat-card-content>

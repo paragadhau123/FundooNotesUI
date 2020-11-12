@@ -17,7 +17,11 @@
     pointer-events: none;
     opacity: 0.4;
 }
-
+@media only screen and (max-width: 380px) {
+    .lll{
+       margin-left: 12%;
+    }
+}
 .card:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     ;

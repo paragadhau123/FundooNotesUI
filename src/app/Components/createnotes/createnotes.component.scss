@@ -10,7 +10,7 @@
             height: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            margin-top: 100px;
+           
         }
         @media only screen and (max-width: 750px) {
             .front-card{
@@ -20,13 +20,19 @@
         @media only screen and (max-width: 520px) {
             .front-card{
                 width: 300px;
+               margin-left: 8%;
+            }
+        }
+        @media only screen and (max-width: 370px) {
+            .front-card{
+                width: 300px;
                 margin-left: 5%;
             }
         }
         .back-card {
             width: 500px;
             border-radius: 10px;
-            margin-top: 200px;
+           
         }
         
         .mat-icon {
