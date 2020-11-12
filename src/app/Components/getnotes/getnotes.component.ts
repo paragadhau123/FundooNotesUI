@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NotesserviceService } from '../../Services/notesservice/notesservice.service';
 import { MatDialog } from '@angular/material/dialog';
+import { DialognoteComponent } from '../dialognote/dialognote.component';
 
 @Component({
   selector: 'app-getnotes',
@@ -10,9 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class GetnotesComponent implements OnInit {
   note = []
-  isButtonVisible = false
   hoverIndex = -1
-  active: boolean
   nonoteCondition = false
   constructor(private http: NotesserviceService, public dialog: MatDialog) {   
   }
@@ -30,18 +29,13 @@ export class GetnotesComponent implements OnInit {
     this.hoverIndex = i
   }
 
-  displayPannel(i) {
-    if (this.hoverIndex == i) {
-      this.active = true
-    }
-    else {
-      this.active = false
-    }
-  }
+  
 
   noNote() {
     return (this.note.length == 0) ? this.nonoteCondition = true : this.nonoteCondition = false;
   }
   
-
+  openDialog(title, message, noteId,accountId) {
+    this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId,accountId:accountId } });
+  }
 }

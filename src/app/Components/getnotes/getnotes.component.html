@@ -1,6 +1,6 @@
-<div fxLayout="row wrap " fxLayoutGap="20px" *ngIf="!nonoteCondition"  fxLayout="row" fxLayoutAlign="space-around center" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.xs="center start">
+<div fxLayout="row wrap " fxLayoutGap="10px" *ngIf="!nonoteCondition">
     <mat-card class="card" *ngFor="let note of note; let i=index"  appearance="outline" (mouseenter)="onHover(i)" (mouseleave)="onHover(-1)" [style.background]="note.color">
-        <div >
+        <div (click)="openDialog(note.title,note.message,note.id)">
             <mat-card-content>
                 <mat-card-title>
                     {{note.title}}
@@ -13,8 +13,8 @@
             </mat-card-content>
         </div>
         <mat-card-content>
-            <span [hidden]="!(hoverIndex==i)" class="pannel">
-          <app-icons [noteId]="note.id"></app-icons>
+            <span [hidden]="!(hoverIndex==i)">
+          <app-icons></app-icons>
         </span>
         </mat-card-content>
     </mat-card>
@@ -22,6 +22,6 @@
 <div *ngIf="noNote()" fxLayout="row" fxLayoutAlign="center center" class="disabled">
     <img src="../../../assets/images/keep.png" alt="icon">
     <div>
-        no note to display
+        No note to display
     </div>
 </div>

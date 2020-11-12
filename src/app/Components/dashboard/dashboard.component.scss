@@ -65,7 +65,12 @@ $white:white;
     background-color: #f1f3f4;
 }
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .container{
+        position: none;
+        
+    }
+}
 
 .input-feild {
     width: 44.6vw;

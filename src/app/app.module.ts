@@ -29,6 +29,7 @@ import { GetnotesComponent } from './components/getnotes/getnotes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DialognoteComponent } from './components/dialognote/dialognote.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     CreatenotesComponent,
     GetnotesComponent,
     IconsComponent,
+    DialognoteComponent,
   ],
   imports: [
     BrowserModule,

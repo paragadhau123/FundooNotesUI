@@ -4,6 +4,10 @@
     // margin-top: 20px;
     border-radius: 10px;
     border: black 3px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-around;
+     margin-top: 5%;
 }
 
 .disabled {
@@ -25,4 +29,9 @@
 
 .mat-card-content {
     font-size: 13px;
+}
+@media only screen and (max-width: 520px) {
+    .card{
+        margin-left: 5%;
+    }
 }
