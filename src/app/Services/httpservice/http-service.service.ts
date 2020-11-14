@@ -21,4 +21,8 @@ export class HttpServiceService {
     return this.httpclient.put(url, data, isHeaderRequired && headers)
   }
 
+  delete(url,isHeaderRequired = false, headers = null) {
+    return this.httpclient.delete(url,isHeaderRequired && headers)
+  }
+
 }

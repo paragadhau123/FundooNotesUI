@@ -6,21 +6,25 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { AuthGuard } from './auth.guard';
-import { CreatenotesComponent } from './components/createnotes/createnotes.component';
 import { GetnotesComponent } from './components/getnotes/getnotes.component';
 
 const routes: Routes = [
-  {path:"register",component:RegisterComponent},
-  {path:"login",component:LoginComponent},
-  {path:"forgotPassword",component:ForgotpasswordComponent},
-  {path:"resetPassword/:token",component:ResetpasswordComponent},
-  {path:"dashboard",component:DashboardComponent ,canActivate: [AuthGuard] ,
-  children: [
-    {
+  { path: "register", component: RegisterComponent },
+  { path: "login", component: LoginComponent },
+  { path: "forgotPassword", component: ForgotpasswordComponent },
+  { path: "resetPassword/:token", component: ResetpasswordComponent },
+  {
+    path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard],
+    children: [
+      {
         path: 'notes',
         component: GetnotesComponent
-    },
-]   },
+      }
+    ]
+  }
+
+
+
 ];
 
 @NgModule({

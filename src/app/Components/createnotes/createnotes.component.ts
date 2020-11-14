@@ -28,18 +28,13 @@ export class CreatenotesComponent implements OnInit {
     }
     if (this.title.valid && this.message.valid) {
     this.note.addNotes(noteData).subscribe(response => {
-        if (response['status'].success == true) {
-          this.snackBar.open("Note added successfully", 'cancle')
-        }
-      
-    },
-      error => {
+          this.snackBar.open("Note added successfully", 'cancle')                        
+    },error => {
         this.snackBar.open("Note is not added succesfully", 'cancle')
       }
     )
     }
   }
-
   changeNotePinned() {
     return this.notePinned = !this.notePinned
   }

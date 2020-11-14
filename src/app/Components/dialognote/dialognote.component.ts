@@ -9,6 +9,7 @@ import {NotesserviceService  } from "../../Services/notesservice/notesservice.se
 export class DialognoteComponent implements OnInit {
   title 
   message
+
   constructor(@Inject(MAT_DIALOG_DATA)public data:any,private noteService:NotesserviceService) { }
 
   ngOnInit(): void {
@@ -19,21 +20,23 @@ export class DialognoteComponent implements OnInit {
   changeTitle(value){
     this.title=value
   }
-
+  
   updateNote(){
     let noteData={
       "noteId":this.data.noteId,
       "accountId":this.data.accountId,
       "title": this.title,
-      "message": this.message
+      "message": this.message,
+      "color":"#34a853"
     }
     console.log(noteData)
     this.noteService.updateNotes(noteData).subscribe(response => {
         console.log(response)      
-    },
+    },  
       error => {
         console.log(error)
       }
     )
   }
+  
 }
