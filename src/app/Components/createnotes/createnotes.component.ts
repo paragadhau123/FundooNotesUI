@@ -15,8 +15,9 @@ export class CreatenotesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  title = new FormControl(); 
+  title = new FormControl();
   message = new FormControl();
+  color = new FormControl();
   notePinned = false;
   card = false;
   reminder = false;
@@ -24,15 +25,16 @@ export class CreatenotesComponent implements OnInit {
   addNote() {
     let noteData = {
       "title": this.title.value,
-      "message": this.message.value
+      "message": this.message.value,
+      "color": this.color.value
     }
     if (this.title.valid && this.message.valid) {
-    this.note.addNotes(noteData).subscribe(response => {
-          this.snackBar.open("Note added successfully", 'cancle')                        
-    },error => {
+      this.note.addNotes(noteData).subscribe(response => {
+        this.snackBar.open("Note added successfully", 'cancle')
+      }, error => {
         this.snackBar.open("Note is not added succesfully", 'cancle')
       }
-    )
+      )
     }
   }
   changeNotePinned() {

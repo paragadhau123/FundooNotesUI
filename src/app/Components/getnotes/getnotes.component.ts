@@ -10,7 +10,6 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class GetnotesComponent implements OnInit {
   note = []
-  trash = []
   hoverIndex = -1
   constructor(private http: NotesserviceService, public dialog: MatDialog) {
   }

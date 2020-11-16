@@ -30,9 +30,9 @@ export class IconsComponent implements OnInit {
     let noteColorData = {
       "color": color,
       "noteId": this.noteObject.noteId,
-      "accountId":this.noteObject.accountId,
-      "title":this.noteObject.title,
-      "message":this.noteObject.message
+      "accountId": this.noteObject.accountId,
+      "title": this.noteObject.title,
+      "message": this.noteObject.message
     }
     this.noteService.updateNotes(noteColorData).subscribe(response => {
       console.log(response)

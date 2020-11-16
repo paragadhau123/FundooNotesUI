@@ -1,8 +1,19 @@
 <button mat-icon-button>
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="reminder">add_alert</mat-icon>
 </button>
+
 <button mat-icon-button>
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="add peron">person_add</mat-icon>
+</button>
+
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="color pallet">color_lens</mat-icon>
+</button>
+
+
+<button mat-icon-button>
+    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="archive" (click)="archiveNote()">archive
+    </mat-icon>
 </button>
 
 <button mat-icon-button>
@@ -11,17 +22,10 @@
 </button>
 
 <button mat-icon-button>
-    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="archive" (click)="archiveNote()">archive
-    </mat-icon>
-</button>
-
-<button mat-icon-button>
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="more">more_vert</mat-icon>   
 </button>
 
-<button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="color pallet">color_lens</mat-icon>
-</button>
+
 <mat-menu #menu="matMenu" fxLayout="row">
     <div fxLayoutAlign="space-around center" class="pallet">
         <div class="color-one" (click)="getColor('#fff')">

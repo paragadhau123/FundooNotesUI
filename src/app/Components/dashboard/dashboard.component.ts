@@ -13,15 +13,15 @@ export class DashboardComponent implements OnInit {
   token = localStorage.getItem('token')
   name = localStorage.getItem('EmployeeFirstName')
   email = localStorage.getItem('Email')
-  constructor( public snackBar: MatSnackBar, public route: Router) { }
+  constructor(public snackBar: MatSnackBar, public route: Router) { }
 
   ngOnInit(): void {
   }
 
-  logout() {    
-        this.snackBar.open("Logout successfully.", 'cancle') 
-        localStorage.clear
-        this.route.navigate(['login'])    
+  logout() {
+    this.snackBar.open("Logout successfully.", 'cancle')
+    localStorage.clear
+    this.route.navigate(['login'])
   }
 
   changeVisiblity() {

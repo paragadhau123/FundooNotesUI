@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   errors;
   constructor(private user: UserServiceService, public route: Router, public snackBar: MatSnackBar) {
   }
- 
+
   Email = new FormControl('', [Validators.email, Validators.required]);
   Password = new FormControl('', [
     Validators.minLength(8),
@@ -63,20 +63,20 @@ export class RegisterComponent implements OnInit {
       "employeeFirstName": this.FirstName.value,
       "employeeLastName": this.LastName.value,
       "email": this.Email.value,
-      "phoneNumber":"9604445258",
+      "phoneNumber": "9604445258",
       "password": this.Password.value,
     }
-    if(this.FirstName.valid && this.LastName.valid && this.Email.valid && this.Password.valid && this.ConfirmPassword.valid){
+    if (this.FirstName.valid && this.LastName.valid && this.Email.valid && this.Password.valid && this.ConfirmPassword.valid) {
       this.user.register(userdata).subscribe(response => {
-        
-          this.snackBar.open("register successfully", 'cancle')
-          this.route.navigate(['login'])
-        
+
+        this.snackBar.open("register successfully", 'cancle')
+        this.route.navigate(['login'])
+
       },
         error => {
           this.snackBar.open("login unsuccessfully.", 'cancle')
         }
       )
-    }      
+    }
   }
 }

@@ -14,19 +14,14 @@
                     <mat-form-field appearance="none" class="input">
                         <input matInput autocomplete="off" placeholder="Title" [formControl]="title" required>
                     </mat-form-field>
-                    <button mat-icon-button>
-            <mat-icon class="material-icons-outlined" (click)="changeNotePinned()" (click)="reset=true" >
-              {{!notePinned ? 'push_pin':'done'}}
-            </mat-icon>
-          </button>
                     <mat-form-field appearance="none" class="input">
                         <input matInput placeholder="Take a note" autocomplete="off" autofocus [formControl]="message" required>
                     </mat-form-field>
                     <span fxLayout="row" fxLayoutAlign="space-between start" class="div">
                     <app-icons></app-icons>                    
-                    <button type="button" mat-button (click)="addNote()">close</button>
+                    <button type="submit" mat-button (click)="addNote()">close</button>
                     </span>
-                </form>
+                </form> 
             </mat-card>
         </div>
     </div>
