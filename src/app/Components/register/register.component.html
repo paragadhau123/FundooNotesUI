@@ -1,8 +1,8 @@
 <div fxLayout="row wrap " fxLayoutAlign="center center" class="main">
     <div fxLayout="row" fxLayoutGap="10">
         <mat-card class="card">
-            <div fxFlex="70%">
-                <div class="fundoo">
+            <div fxFlex="70%" fxFlex.xs="100%" fxFlex.sm="100%">
+                <div class="fundoo" fxLayout.xs="row" fxLayoutAlign.xs="center center" fxLayout.sm="row" fxLayoutAlign.sm="center center">
                     <span class="blue">F</span>
                     <span class="red">u</span>
                     <span class="yellow">n</span>
@@ -12,7 +12,7 @@
                 </div>
                 <div class="heading">Create your account</div>
                 <form (ngSubmit)="register()">
-                    <div>
+                    <div fxLayout.xs="column" fxLayoutAlign.xs="space-between none" fxLayout.sm="column" fxLayoutAlign.sm="space-between none">
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label>First Name</mat-label>
                             <input matInput type="text" [formControl]="FirstName" autocomplete="off" required>
@@ -38,7 +38,7 @@
                             </mat-error>
                         </mat-form-field>
                     </div>
-                    <div>
+                    <div fxLayout.xs="column" fxLayoutAlign.xs="space-between none" fxLayout.sm="column" fxLayoutAlign.sm="space-between none">
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label for="password">Password</mat-label>
                             <input matInput [type]="hide ? 'password' : 'text'" [formControl]="Password" autocomplete="off" required>
@@ -66,7 +66,7 @@
                     </div>
                 </form>
             </div>
-            <div fxFlex="30%" fxLayoutAlign="center center">
+            <div fxFlex="30%" fxLayoutAlign="center center" fxShow.sm="false" fxShow.xs="false">
                 <img src="../../../assets/images/account.svg" class="image">
             </div>
         </mat-card>

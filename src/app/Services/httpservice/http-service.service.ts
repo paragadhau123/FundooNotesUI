@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpServiceService {
 
   constructor(private httpclient: HttpClient) {
@@ -21,8 +23,8 @@ export class HttpServiceService {
     return this.httpclient.put(url, data, isHeaderRequired && headers)
   }
 
-  delete(url,isHeaderRequired = false, headers = null) {
-    return this.httpclient.delete(url,isHeaderRequired && headers)
+  delete(url, isHeaderRequired = false, headers = null) {
+    return this.httpclient.delete(url, isHeaderRequired && headers)
   }
 
 }
