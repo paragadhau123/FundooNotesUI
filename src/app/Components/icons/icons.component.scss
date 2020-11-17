@@ -25,26 +25,32 @@
     border-radius: 50%;
     border: 1px solid $borderColor;
   }
+
   .color-one {
     @include color();
     background-color: $white;
   }
+
   .color-two {
     @include color();
     background-color: $palletRed;
   }
+
   .color-three {
     @include color();
     background-color: $palletOrange;
   }
+
   .color-four {
     @include color();
     background-color: $palletYellow;
   }
+
   .color-five {
     @include color();
     background-color: $palletGreen;
   }
+
   .color-six {
     @include color();
     background-color: $palletCan;
@@ -57,18 +63,22 @@
     @include color();
     background-color: $palletBlue;
   }
+
   .color-nine {
     @include color();
     background-color: $palletPurpl;
   }
+
   .color-ten {
     @include color();
     background-color: $palletPink;
   }
+
   .color-eleven {
     @include color();
     background-color: $palletLightOrange;
   }
+
   .color-twelve {
     @include color();
     background-color: $palletFaint;
@@ -77,6 +87,7 @@
   .mat-icon {
     font-size: 18px;
   }
+  
   .pallet {
     padding: 5px;
   }

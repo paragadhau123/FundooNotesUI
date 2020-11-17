@@ -7,7 +7,7 @@
         <span>Fundoo Note</span>
         <mat-card class="input-card">
             <mat-icon>search</mat-icon>
-            <div class="input-feild">
+            <div class="input-feild" >
                 <input type="search" placeholder="search">
             </div>
         </mat-card>
@@ -32,7 +32,7 @@
 </div>
 <mat-drawer-container class="container">
     <div fxFlex.xs="90">
-        <div fxFlex="10% ">
+        <div fxFlex="10% ">        
             <span class="nav " *ngIf="checkVisiblity() " (mouseleave)="changeVisiblity() ">
         <button mat-icon-button>
           <mat-icon class="material-icons-outlined " (mouseenter)="drawer.toggle() ">emoji_objects</mat-icon>

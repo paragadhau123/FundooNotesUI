@@ -6,7 +6,6 @@ import { NotesserviceService } from "../../Services/notesservice/notesservice.se
   styleUrls: ['./icons.component.scss']
 })
 
-
 export class IconsComponent implements OnInit {
   constructor(private noteService: NotesserviceService) { }
   @Input() noteObject
