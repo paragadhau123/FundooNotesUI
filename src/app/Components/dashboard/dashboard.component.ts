@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { UtilityService } from "../../Services/utilityservice/utility.service";
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,18 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  showFiller = false;
   isButtonVisible = true;
   token = localStorage.getItem('token')
   name = localStorage.getItem('EmployeeFirstName')
   email = localStorage.getItem('Email')
-  constructor(public snackBar: MatSnackBar, public route: Router) { }
+  constructor(private utility: UtilityService, public route: Router) { }
 
   ngOnInit(): void {
   }
 
   logout() {
-    this.snackBar.open("Logout successfully.", 'cancle')
+    this.utility.displayMessage("Logout successfully")
     localStorage.removeItem('Token')
     localStorage.removeItem('EmployeeFirstName')
     localStorage.removeItem('Email')

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from "../../Services/userservice/user-service.service";
 import { ActivatedRoute } from '@angular/router';
+import { UtilityService } from "../../Services/utilityservice/utility.service";
 
 @Component({
   selector: 'app-resetpassword',
@@ -28,7 +29,7 @@ export class ResetpasswordComponent implements OnInit {
       : 'please enter valid Password';
   }
 
-  constructor(private user: UserServiceService, private route: ActivatedRoute) { }
+  constructor(private user: UserServiceService, private route: ActivatedRoute, private utility: UtilityService) { }
 
   ngOnInit(): void {
 
@@ -44,10 +45,10 @@ export class ResetpasswordComponent implements OnInit {
     if (this.Password.valid) {
 
       this.user.resetPassword(userData, token).subscribe((result: any) => {
-        console.log(result)
+        this.utility.displayMessage("Password Changed Succesfully");
       },
         (error) => {
-          console.log(error)
+          this.utility.displayMessage("Password Changed Unsuccesful");
         })
     }
   }

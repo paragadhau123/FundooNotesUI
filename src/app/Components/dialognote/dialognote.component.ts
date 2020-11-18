@@ -1,16 +1,19 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NotesserviceService } from "../../Services/notesservice/notesservice.service";
+import { UtilityService } from "../../Services/utilityservice/utility.service";
+
 @Component({
   selector: 'app-dialognote',
   templateUrl: './dialognote.component.html',
   styleUrls: ['./dialognote.component.scss']
 })
+
 export class DialognoteComponent implements OnInit {
   title
   message
   
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private noteService: NotesserviceService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private noteService: NotesserviceService,private utility:UtilityService) { }
 
   ngOnInit(): void {
   }
@@ -33,10 +36,10 @@ export class DialognoteComponent implements OnInit {
     }
     console.log(noteData)
     this.noteService.updateNotes(noteData).subscribe(response => {
-      console.log(response)
+     this.utility.displayMessage("Note is updated succesfully");
     },
       error => {
-        console.log(error)
+        this.utility.displayMessage("Note is not updated succesfully");
       }
     )
   }

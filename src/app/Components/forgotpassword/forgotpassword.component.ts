@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from "../../Services/userservice/user-service.service";
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { UtilityService } from "../../Services/utilityservice/utility.service";
 
 @Component({
   selector: 'app-forgotpassword',
@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ForgotpasswordComponent implements OnInit {
   form: FormGroup;
-  constructor(private fb: FormBuilder, private userService: UserServiceService, public snackBar: MatSnackBar) {
+  constructor(private fb: FormBuilder, private userService: UserServiceService, private utility: UtilityService) {
     this.form = this.fb.group({
       emailFormControl: ["",
         Validators.email]
@@ -21,15 +21,11 @@ export class ForgotpasswordComponent implements OnInit {
     let userData = {
       "email": this.form.controls.emailFormControl.value,
     }
-
-    console.log(userData)
     if (this.form.valid) {
       this.userService.forgotPassword(userData).subscribe((result: any) => {
-        this.snackBar.open("reset password link is send on mail", 'success')
-        console.log(result)
+        this.utility.displayMessage("reset password link is send on mail")
       }, (error) => {
-        this.snackBar.open("password can not be reset", 'failed')
-        console.log(error)
+        this.utility.displayMessage("password can not be reset")
       })
     }
   }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { NotesserviceService } from "../../Services/notesservice/notesservice.service";
+import {UtilityService  } from "../../Services/utilityservice/utility.service";
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
@@ -7,12 +8,13 @@ import { NotesserviceService } from "../../Services/notesservice/notesservice.se
 })
 
 export class IconsComponent implements OnInit {
-  constructor(private noteService: NotesserviceService) { }
+  constructor(private noteService: NotesserviceService,private utility:UtilityService) { }
   @Input() noteObject
-  ngOnInit(): void {
-  }
+
   @Output() change = new EventEmitter<any>();
 
+  ngOnInit(): void {
+  }
   trashNote() {
     let noteData = {
       noteIdList: [this.noteObject.noteId]
@@ -20,13 +22,14 @@ export class IconsComponent implements OnInit {
     console.log(noteData)
     this.noteService.deleteNotes(noteData).subscribe(response => {
       this.change.emit();
-      console.log(response);     
+      this.utility.displayMessage("Note Deleted Successfully");
     },
       error => {
-        console.log(error)
+        this.utility.displayMessage("Note Is Not Deleted Successfully");
       }
     )
   }
+
   getColor(color) {
     let noteColorData = {
       "color": color,
@@ -37,10 +40,10 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.updateNotes(noteColorData).subscribe(response => {
       this.change.emit();
-      console.log(response)
+      this.utility.displayMessage("Note Color Chnaged Successfully");
     },
       error => {
-        console.log(error)
+        this.utility.displayMessage("Note Color Not Chnaged Successfully");
       }
     )
   }

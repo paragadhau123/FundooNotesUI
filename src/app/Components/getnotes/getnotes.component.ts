@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesserviceService } from '../../Services/notesservice/notesservice.service';
-import { MatDialog } from '@angular/material/dialog';
+import { UtilityService } from "../../Services/utilityservice/utility.service";
 
 @Component({
   selector: 'app-getnotes',
@@ -11,27 +11,27 @@ import { MatDialog } from '@angular/material/dialog';
 export class GetnotesComponent implements OnInit {
   note = []
   hoverIndex = -1
-  constructor(private http: NotesserviceService, public dialog: MatDialog) {
+  constructor(private noteService: NotesserviceService,private utility:UtilityService) {
   }
 
-  data:any;
+  data: any;
   receive($event) {
     this.data = $event
-     this.getNotes()
+    this.getNotes()
   }
-  
-getNotes(){
-  this.http.getNotes().subscribe(response => {
-    this.note = response['data']
-    this.note.reverse()
-    console.log(this.note)
-  })
-}
-  
+
+  getNotes() {
+    this.noteService.getNotes().subscribe(response => {
+      this.note = response['data']
+      this.note.reverse()
+      this.utility.displayMessage("Notes Displayed Succesfully")
+    })
+  }
+
   ngOnInit(): void {
-      this.getNotes()
-    }
-  
+    this.getNotes()
+  }
+
 
 
 

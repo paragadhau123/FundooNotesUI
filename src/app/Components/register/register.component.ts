@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from "@angular/forms"
 import { Router } from '@angular/router';
 import { UserServiceService } from '../../Services/userservice/user-service.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { UtilityService } from "../../Services/utilityservice/utility.service";
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class RegisterComponent implements OnInit {
   hide = true;
   errors;
-  constructor(private user: UserServiceService, public route: Router, public snackBar: MatSnackBar) {
+  constructor(private user: UserServiceService, public route: Router, private utility: UtilityService) {
   }
 
   Email = new FormControl('', [Validators.email, Validators.required]);
@@ -68,13 +68,12 @@ export class RegisterComponent implements OnInit {
     }
     if (this.FirstName.valid && this.LastName.valid && this.Email.valid && this.Password.valid && this.ConfirmPassword.valid) {
       this.user.register(userdata).subscribe(response => {
-
-        this.snackBar.open("register successfully", 'cancle')
+        this.utility.displayMessage("register Successfully");
         this.route.navigate(['login'])
 
       },
         error => {
-          this.snackBar.open("login unsuccessfully.", 'cancle')
+          this.utility.displayMessage("Register Unsuccessfully");
         }
       )
     }

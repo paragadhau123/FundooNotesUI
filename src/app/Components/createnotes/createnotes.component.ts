@@ -1,7 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NotesserviceService } from "../../Services/notesservice/notesservice.service";
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { UtilityService } from "../../Services/utilityservice/utility.service";
 
 @Component({
   selector: 'app-createnotes',
@@ -9,16 +9,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./createnotes.component.scss']
 })
 export class CreatenotesComponent implements OnInit {
+
   @Output() change = new EventEmitter<any>();
 
   reset = true
-  constructor(private note: NotesserviceService, public snackBar: MatSnackBar) { }
+  constructor(private note: NotesserviceService, private utility: UtilityService) { }
 
   ngOnInit(): void {
   }
   title = new FormControl();
   message = new FormControl();
-  color = new FormControl();
   notePinned = false;
   card = false;
   reminder = false;
@@ -26,20 +26,16 @@ export class CreatenotesComponent implements OnInit {
   addNote() {
     let noteData = {
       "title": this.title.value,
-      "message": this.message.value,
-      "color": this.color.value
+      "message": this.message.value
     }
-    if (this.title.valid && this.message.valid ) {
+    if (this.title.valid && this.message.valid) {
       this.note.addNotes(noteData).subscribe(response => {
         this.change.emit();
-        this.snackBar.open("Note added successfully", 'cancle')
+        this.utility.displayMessage("Note added successfully")
       }, error => {
-        this.snackBar.open("Note is not added succesfully", 'cancle')
+        this.utility.displayMessage("Note is not added succesfully")
       }
       )
     }
   }
-  // changeNotePinned() {
-  //   return this.notePinned = !this.notePinned
-  // }
 }
