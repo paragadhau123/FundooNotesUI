@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { NotesserviceService } from "../../Services/notesservice/notesservice.service";
 @Component({
   selector: 'app-icons',
@@ -11,6 +11,7 @@ export class IconsComponent implements OnInit {
   @Input() noteObject
   ngOnInit(): void {
   }
+  @Output() change = new EventEmitter<any>();
 
   trashNote() {
     let noteData = {
@@ -18,7 +19,8 @@ export class IconsComponent implements OnInit {
     }
     console.log(noteData)
     this.noteService.deleteNotes(noteData).subscribe(response => {
-      console.log(response)
+      this.change.emit();
+      console.log(response);     
     },
       error => {
         console.log(error)
@@ -34,6 +36,7 @@ export class IconsComponent implements OnInit {
       "message": this.noteObject.message
     }
     this.noteService.updateNotes(noteColorData).subscribe(response => {
+      this.change.emit();
       console.log(response)
     },
       error => {

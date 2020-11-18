@@ -20,7 +20,9 @@ export class DashboardComponent implements OnInit {
 
   logout() {
     this.snackBar.open("Logout successfully.", 'cancle')
-    localStorage.clear
+    localStorage.removeItem('Token')
+    localStorage.removeItem('EmployeeFirstName')
+    localStorage.removeItem('Email')
     this.route.navigate(['login'])
   }
 

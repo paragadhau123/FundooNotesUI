@@ -14,13 +14,24 @@ export class GetnotesComponent implements OnInit {
   constructor(private http: NotesserviceService, public dialog: MatDialog) {
   }
 
-  ngOnInit(): void {
-    this.http.getNotes().subscribe(response => {
-      this.note = response['data']
-      this.note.reverse()
-      console.log(this.note)
-    })
+  data:any;
+  receive($event) {
+    this.data = $event
+     this.getNotes()
   }
+  
+getNotes(){
+  this.http.getNotes().subscribe(response => {
+    this.note = response['data']
+    this.note.reverse()
+    console.log(this.note)
+  })
+}
+  
+  ngOnInit(): void {
+      this.getNotes()
+    }
+  
 
 
 
