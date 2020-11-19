@@ -2,7 +2,7 @@ import { Component, OnInit, Inject , Output, EventEmitter} from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NotesserviceService } from "../../Services/notesservice/notesservice.service";
 import { UtilityService } from "../../Services/utilityservice/utility.service";
-
+import { DataserviceService } from "../../Services/dataservice/dataservice.service";
 @Component({
   selector: 'app-dialognote',
   templateUrl: './dialognote.component.html',
@@ -12,7 +12,7 @@ import { UtilityService } from "../../Services/utilityservice/utility.service";
 export class DialognoteComponent implements OnInit {
   title
   message
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private noteService: NotesserviceService,private utility:UtilityService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private noteService: NotesserviceService,private utility:UtilityService,private dataService:DataserviceService) { }
   ngOnInit(): void {
   }
   @Output() change1 = new EventEmitter<any>();
@@ -30,11 +30,11 @@ export class DialognoteComponent implements OnInit {
       "accountId": this.data.accountId,
       "title": this.title,
       "message": this.message,
-      "color": this.data.color
+      // "color": this.data.color
     }
     console.log(noteData)
     this.noteService.updateNotes(noteData).subscribe(response => {
-      this.change1.emit();
+      this.dataService.changeMessage({});
      this.utility.displayMessage("Note is updated succesfully");
     },
       error => {

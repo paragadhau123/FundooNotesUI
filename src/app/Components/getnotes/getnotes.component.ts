@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesserviceService } from '../../Services/notesservice/notesservice.service';
 import { UtilityService } from "../../Services/utilityservice/utility.service";
-
+import { DataserviceService } from "../../Services/dataservice/dataservice.service";
 @Component({
   selector: 'app-getnotes',
   templateUrl: './getnotes.component.html',
@@ -10,10 +10,9 @@ import { UtilityService } from "../../Services/utilityservice/utility.service";
 
 export class GetnotesComponent implements OnInit {
   note = []
-  trash = []
   hoverIndex = -1
 
-  constructor(private noteService: NotesserviceService, private utility: UtilityService) {
+  constructor(private noteService: NotesserviceService, private utility: UtilityService,private data1:DataserviceService) {
   }
 
   data: any;
@@ -31,6 +30,7 @@ export class GetnotesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.data1.currentMessage.subscribe(data=>{ this.getNotes()});
     this.getNotes()
   }
 

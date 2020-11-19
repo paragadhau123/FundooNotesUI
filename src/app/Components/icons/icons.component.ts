@@ -17,17 +17,27 @@ export class IconsComponent implements OnInit {
   }
 
   trashNote() {
-    let noteData = {
-      noteIdList: [this.noteObject.noteId]
+    // let noteData = {
+    //   noteIdList: [this.noteObject.noteId]
+    // }
+    // console.log(noteData)
+    // this.noteService.deleteNotes(noteData).subscribe(response => {
+    //   this.change.emit();
+    //   this.utility.displayMessage("Note Deleted Successfully");
+    // },
+    //   error => {
+    //     this.utility.displayMessage("Note Is Not Deleted Successfully");
+    //   }
+    // )
+    let noteColorData = {
+      "noteId": this.noteObject.noteId
     }
-    console.log(noteData)
-    this.noteService.deleteNotes(noteData).subscribe(response => {
-      this.change.emit();
-      this.utility.displayMessage("Note Deleted Successfully");
+    this.noteService.trashNote(noteColorData).subscribe(response =>{
+      this.utility.displayMessage("Note is trashed succesfully");
     },
-      error => {
-        this.utility.displayMessage("Note Is Not Deleted Successfully");
-      }
+    error => {
+      this.utility.displayMessage("Note is untrashed Successfully");
+    }
     )
   }
 
@@ -51,6 +61,16 @@ export class IconsComponent implements OnInit {
     )
   }
   archiveNote() {
+    let noteColorData = {
+      "noteId": this.noteObject.noteId
+    }
+    this.noteService.archiveNotes(noteColorData).subscribe(response =>{
+      this.utility.displayMessage("Note is Archived succesfully");
+    },
+    error => {
+      this.utility.displayMessage("Note is unarchived Successfully");
+    }
+    )
   }
   addNoteLable() {
   }
