@@ -12,6 +12,7 @@ $white:white;
     position: absolute;
     top: 10%;
     width: 200px;
+  
 }
 
 .titleBar {
@@ -96,9 +97,9 @@ $white:white;
     background-color: transparent;
 }
 
-.sidenav {
-    width: 200px;
-}
+// .sidenav {
+//     width: 200px;
+// }
 
 .mat-list-option[aria-selected="true"] {
     background-color: #feefc3;
@@ -134,7 +135,7 @@ $white:white;
     height: 50px;
 }
 
-::ng-deep .userDetail {
-    width: 160px;
-    padding: 10px;
-}
+// ::ng-deep .userDetail {
+//     width: 160px;
+//     padding: 10px;
+// }

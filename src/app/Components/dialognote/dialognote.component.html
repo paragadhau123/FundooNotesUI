@@ -1,13 +1,12 @@
-<form>
+<form >
     <mat-form-field appearance="none">
       <input matInput autocomplete="off" class="input" placeholder="title" value="{{data.title}}" (input)="changeTitle($event.target.value)" >
     </mat-form-field>
     <mat-form-field appearance="none" >
       <input matInput placeholder="take a note" class="input" autocomplete="off"  value="{{data.message}}" (input)="changeMessage($event.target.value)">
-    </mat-form-field>
-    <span fxLayout="row" fxLayoutAlign="end end">
+    </mat-form-field >
+    <span fxLayout.xs="column" fxLayout="row" fxLayoutAlign.xs="end end" fxLayoutAlign="space-between end" class="options" >
       <app-icons></app-icons>
-      <span class="settings"></span>
-      <button  mat-button (click)="updateNote()">close</button>
+      <button type="submit" mat-button (click)="updateNote()">close</button>
     </span>
   </form>

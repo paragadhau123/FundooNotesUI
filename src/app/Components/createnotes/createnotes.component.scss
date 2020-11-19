@@ -1,6 +1,6 @@
-        .back-card .mat-form-field {
-            width: 90%;
-            height: 7px;
+        .back-card  {
+            width: 600px;
+            height: 180px;
         }
         
         .front-card {
@@ -9,49 +9,66 @@
             width: 600px;
             height: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-           
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);           
         }
+
         @media only screen and (max-width: 750px) {
             .front-card{
                 width: 400px;
             }
         }
-        @media only screen and (max-width: 520px) {
+
+        @media only screen and (max-width: 596px) {
             .front-card{
-                width: 300px;
+               width: 350px;
                margin-left: 8%;
+         
             }
         }
+        
+        @media only screen and (max-width: 470px) {
+            .front-card{
+
+               width: 300px;
+               margin-left: 8%;
+           
+            }
+        }
+
+        @media only screen and (max-width: 410px) {
+            .front-card{
+                width: 280px;
+                margin-left: 5%;
+                
+            }
+        }
+
         @media only screen and (max-width: 370px) {
             .front-card{
-                width: 300px;
-                margin-left: 5%;
-                margin-top: -10px;
+                width: 250px;
+                margin-left: 9%;
+               
             }
         }
-        @media only screen and (max-width: 750px) {
+       
+        @media only screen and (max-width: 660px) {
             .back-card{
                 width: 400px;
             }
         }
+
         @media only screen and (max-width: 578px) {
             .back-card{
                 width: 300px;
-            //    margin-left: 8%;
             }
         }
+
         @media only screen and (max-width: 370px) {
             .back-card{
-                width: 300px;
-               
+                width: 250px;
+               margin-left: 9%;
                 margin-top: -10px;
             }
-        }
-        .back-card {
-            width: 500px;
-            border-radius: 10px;
-           
         }
         
         .mat-icon {
@@ -68,10 +85,6 @@
         
         .material-icons-outlined {
             padding: 0px 10px 0px 10px;
-        }
-        
-        .div {
-            margin-top: 8px;
         }
         
         .input {

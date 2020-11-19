@@ -10,8 +10,10 @@ import { UtilityService } from "../../Services/utilityservice/utility.service";
 
 export class GetnotesComponent implements OnInit {
   note = []
+  trash = []
   hoverIndex = -1
-  constructor(private noteService: NotesserviceService,private utility:UtilityService) {
+
+  constructor(private noteService: NotesserviceService, private utility: UtilityService) {
   }
 
   data: any;

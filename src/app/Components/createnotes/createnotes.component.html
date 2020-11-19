@@ -5,9 +5,6 @@
                 <mat-form-field appearance="none">
                     <input matInput placeholder="Take a note..." autocomplete="off">                   
                 </mat-form-field>
-                <img class="material-icons-outlined" src="../../../assets/images/download.svg">
-                <mat-icon class="material-icons-outlined">create</mat-icon>
-                <mat-icon class="material-icons-outlined">perm_media</mat-icon>
             </mat-card>
             <mat-card *ngIf="!reset" class="back-card">
                 <form>
@@ -17,7 +14,7 @@
                     <mat-form-field appearance="none" class="input">
                         <input matInput placeholder="Take a note" autocomplete="off" autofocus [formControl]="message" required>
                     </mat-form-field>
-                    <span fxLayout="row" fxLayoutAlign="space-between start" class="div">
+                    <span fxLayout.xs="column" fxLayout="row" fxLayoutAlign.xs="end end" fxLayoutAlign="space-between start" class="div">
                     <app-icons></app-icons>                    
                     <button type="submit" mat-button (click)="addNote()">close</button>
                     </span>

@@ -1,13 +1,9 @@
 .card {   
-    min-width: 200px;  
+    min-width: 250px;  
     min-height: 100px;
-    // margin-top: 20px;
     border-radius: 10px;
     border: black 3px;
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
-     margin-top: 5%;
+    margin-top: 5%;
 }
 
 .input {
@@ -21,17 +17,13 @@
     pointer-events: none;
     opacity: 0.4;
 }
-@media only screen and (max-width: 380px) {
-    .lll{
-       margin-left: 12%;
+
+@media only screen and (max-width: 595px) {
+    .mainclass{
+       margin-left: 15%;
     }
 }
-@media only screen and (max-width: 380px) {
-    .card{
-       height: 138px;
-       width: 344px;
-    }
-}
+
 .card:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     ;
@@ -43,9 +35,4 @@
 
 .mat-card-content {
     font-size: 13px;
-}
-@media only screen and (max-width: 520px) {
-    .card{
-        margin-left: 5%;
-    }
 }

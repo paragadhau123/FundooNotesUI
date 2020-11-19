@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   isButtonVisible = true;
+  showFiller = false;
   token = localStorage.getItem('token')
   name = localStorage.getItem('EmployeeFirstName')
   email = localStorage.getItem('Email')

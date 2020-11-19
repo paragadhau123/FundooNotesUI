@@ -33,7 +33,6 @@ export class DisplaynotesComponent implements OnInit {
 
   openDialog(title, message, noteId, accountId) {
     this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId, accountId: accountId } });
-    console.log(noteId);
   }
 
   noNote() {
