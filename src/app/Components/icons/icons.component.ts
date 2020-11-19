@@ -15,7 +15,7 @@ export class IconsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   trashNote() {
     let noteData = {
       noteIdList: [this.noteObject.noteId]
@@ -37,7 +37,9 @@ export class IconsComponent implements OnInit {
       "noteId": this.noteObject.noteId,
       "accountId": this.noteObject.accountId,
       "title": this.noteObject.title,
-      "message": this.noteObject.message
+      "message": this.noteObject.message,
+      "isArchive":this.noteObject.isArchive,
+      "isTrash":this.noteObject.isTrash
     }
     this.noteService.updateNotes(noteColorData).subscribe(response => {
       this.change.emit();

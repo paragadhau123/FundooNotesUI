@@ -30,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialognoteComponent } from './components/dialognote/dialognote.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { TrashnoteComponent } from './components/trashnote/trashnote.component';
+import { ArchivenotesComponent } from './components/archivenotes/archivenotes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { TrashnoteComponent } from './components/trashnote/trashnote.component';
     DialognoteComponent,
     DisplaynotesComponent,
     TrashnoteComponent,
+    ArchivenotesComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import { AuthGuard } from './auth.guard';
 import { GetnotesComponent } from './components/getnotes/getnotes.component';
 import { TrashnoteComponent } from './components/trashnote/trashnote.component';
+import { ArchivenotesComponent } from './components/archivenotes/archivenotes.component';
 
 const routes: Routes = [
   { path: "register", component: RegisterComponent },
@@ -24,7 +25,11 @@ const routes: Routes = [
       {
         path: 'trash',
         component: TrashnoteComponent
-      }    
+      },
+      {
+        path: 'archive',
+        component: ArchivenotesComponent
+      }  
     ]
   }
 ];

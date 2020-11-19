@@ -3,31 +3,29 @@ import { NotesserviceService } from '../../Services/notesservice/notesservice.se
 import { UtilityService } from "../../Services/utilityservice/utility.service";
 
 @Component({
-  selector: 'app-trashnote',
-  templateUrl: './trashnote.component.html',
-  styleUrls: ['./trashnote.component.scss']
+  selector: 'app-archivenotes',
+  templateUrl: './archivenotes.component.html',
+  styleUrls: ['./archivenotes.component.scss']
 })
-export class TrashnoteComponent implements OnInit {
+export class ArchivenotesComponent implements OnInit {
   note = []
-
   constructor(private noteService: NotesserviceService, private utility: UtilityService) { }
 
   ngOnInit(): void {
-    this.trashNotes()
+    this.archiveNotes()
   }
 
-  trashNotes(){
+  archiveNotes(){
     this.noteService.getNotes().subscribe(response => {
-      this.note = response['data'].filter(ele=>ele.isTrash==true)
+      this.note = response['data'].filter(ele=>ele.isArchive==true)
       this.note.reverse()
-      this.utility.displayMessage("Trash Notes Displayed Succesfully")
+      this.utility.displayMessage("Archive Notes Displayed Succesfully")
     })
   }
 
   data: any;
   receive($event) {
     this.data = $event
-    this.trashNotes()
+    this.archiveNotes()
   }
-
 }
