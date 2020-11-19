@@ -12,7 +12,7 @@
                         <input matInput autocomplete="off" placeholder="Title" [formControl]="title" required>
                     </mat-form-field>
                     <mat-form-field appearance="none" class="input">
-                        <input matInput placeholder="Take a note" autocomplete="off" autofocus [formControl]="message" required>
+                        <input matInput placeholder="Take a note" [multiline]='true' rows="3" autocomplete="off" autofocus [formControl]="message" required>
                     </mat-form-field>
                     <span fxLayout.xs="column" fxLayout="row" fxLayoutAlign.xs="end end" fxLayoutAlign="space-between start" class="div">
                     <app-icons></app-icons>                    

@@ -15,6 +15,7 @@ export class IconsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   trashNote() {
     let noteData = {
       noteIdList: [this.noteObject.noteId]
