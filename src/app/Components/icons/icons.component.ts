@@ -17,26 +17,16 @@ export class IconsComponent implements OnInit {
   }
 
   trashNote() {
-    // let noteData = {
-    //   noteIdList: [this.noteObject.noteId]
-    // }
-    // console.log(noteData)
-    // this.noteService.deleteNotes(noteData).subscribe(response => {
-    //   this.change.emit();
-    //   this.utility.displayMessage("Note Deleted Successfully");
-    // },
-    //   error => {
-    //     this.utility.displayMessage("Note Is Not Deleted Successfully");
-    //   }
-    // )
     let noteColorData = {
       "noteId": this.noteObject.noteId
     }
     this.noteService.trashNote(noteColorData).subscribe(response =>{
+      if(this.noteObject.isTrash==true){
+        this.utility.displayMessage("Note is Untrashed succesfully");
+      }
+     else{
       this.utility.displayMessage("Note is trashed succesfully");
-    },
-    error => {
-      this.utility.displayMessage("Note is untrashed Successfully");
+     }
     }
     )
   }
@@ -54,10 +44,7 @@ export class IconsComponent implements OnInit {
     this.noteService.updateNotes(noteColorData).subscribe(response => {
       this.change.emit();
       this.utility.displayMessage("Note Color Chnaged Successfully");
-    },
-      error => {
-        this.utility.displayMessage("Note Color Not Chnaged Successfully");
-      }
+    }
     )
   }
   archiveNote() {
@@ -65,10 +52,12 @@ export class IconsComponent implements OnInit {
       "noteId": this.noteObject.noteId
     }
     this.noteService.archiveNotes(noteColorData).subscribe(response =>{
-      this.utility.displayMessage("Note is Archived succesfully");
-    },
-    error => {
-      this.utility.displayMessage("Note is unarchived Successfully");
+      if(this.noteObject.isArchive==true){
+        this.utility.displayMessage("Note is Unrchived succesfully");
+      }
+      else{
+        this.utility.displayMessage("Note is Archived succesfully");
+      }
     }
     )
   }
