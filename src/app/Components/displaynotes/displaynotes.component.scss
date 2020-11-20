@@ -17,7 +17,11 @@
     pointer-events: none;
     opacity: 0.4;
 }
-
+@media only screen and (max-width: 400px) {
+    .card{
+        width: 300px;
+    }
+}
 @media only screen and (max-width: 595px) {
     .mainclass{
        margin-left: 15%;

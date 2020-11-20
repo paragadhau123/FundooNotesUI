@@ -13,15 +13,24 @@ $white:white;
         background-color:white;
    }
 }
+// ::ng-deep{
+// .mat-menu{
+//     height: 300px;
+//     width: 300px;
+// }
+// }
 .slider {
     position: absolute;
     top: 10%;
     width: 200px;
-  
+    height: 650px;
 }
-// .userDetail{
-//     height: 100px;
-// }
+@media only screen and (max-width: 400px) {
+    .slider{
+        height: 780px;
+        
+    }
+}
 .titleBar {
     display: flex;
     flex-wrap: wrap;
@@ -33,10 +42,7 @@ $white:white;
     border-radius: 50%;
 }
 
-// .menu {
-//     height: 356;
-//     width: 456;
-// }
+
 
 .name {
     margin-top: 10px;
@@ -104,9 +110,7 @@ $white:white;
     background-color: transparent;
 }
 
-// .sidenav {
-//     width: 200px;
-// }
+
 
 .mat-list-option[aria-selected="true"] {
     background-color: #feefc3;

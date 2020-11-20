@@ -7,7 +7,7 @@
 </button>
 
 <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="color pallet">color_lens</mat-icon>
+    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="change color">color_lens</mat-icon>
 </button>
 
 <button mat-icon-button>
@@ -15,12 +15,12 @@
     </mat-icon>
 </button>
 
-<button mat-icon-button>
-    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="delete" (click)="trashNote()">delete
+<!-- <button mat-icon-button>
+    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="delete">delete
     </mat-icon>
-</button>
+</button> -->
 
-<button mat-icon-button>
+<button mat-icon-button [matMenuTriggerFor]="menu1">
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="more">more_vert</mat-icon>   
 </button>
 
@@ -47,5 +47,7 @@
         <div class="color-eleven" (click)="getColor('#e6c9a8')"></div>
         <div class="color-twelve" (click)="getColor('#e8eaed')"></div>
     </div>
-
 </mat-menu>
+    <mat-menu #menu1="matMenu">
+        <button mat-menu-item (click)="trashNote()">Trash Note</button>       
+    </mat-menu>

@@ -1,6 +1,6 @@
         .back-card  {
             width: 600px;
-            height: 180px;
+            // height: 180px;
         }
         
         .front-card {
@@ -14,7 +14,7 @@
 
         @media only screen and (max-width: 750px) {
             .front-card{
-                width: 400px;
+                width: 550px;
             }
         }
 
@@ -45,7 +45,7 @@
 
         @media only screen and (max-width: 370px) {
             .front-card{
-                width: 280px;
+                width: 350px;
                 margin-left: 9%;
                
             }

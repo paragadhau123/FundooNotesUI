@@ -14,10 +14,11 @@
                     <mat-form-field appearance="none" class="input">
                         <input matInput placeholder="Take a note" [multiline]='true' rows="3" autocomplete="off" autofocus [formControl]="message" required>
                     </mat-form-field>
-                    <span fxLayout.xs="column" fxLayout="row" fxLayoutAlign.xs="start end" fxLayoutAlign="space-between start" class="div">
-                    <app-icons></app-icons>                    
+                    <span  fxLayout.xs="row" fxLayoutAlign.xs="space-between center" fxLayout="row" fxLayoutAlign="space-between start" class="div">
+                    <app-icons></app-icons>  
+                                 
                     <button type="submit" mat-button (click)="addNote()">close</button>
-                    </span>
+                </span>   
                 </form> 
             </mat-card>
         </div>

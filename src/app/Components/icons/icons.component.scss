@@ -91,3 +91,10 @@
   .pallet {
     padding: 5px;
   }
+  ::ng-deep{
+    .mat-menu-item{
+      line-height:1.25rem;
+      font-size: .875rem;
+      
+   }
+}

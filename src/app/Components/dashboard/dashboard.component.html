@@ -11,10 +11,8 @@
                 <input type="search" placeholder="search">
             </div>
         </mat-card>
-        <!-- <mat-icon fxFlex.xs="true" fxFlex.sm="false" fxFlex.gt-md="false" >search</mat-icon> -->
         <span class="settings"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu">
-      <!-- <mat-icon class="material-icons-outlined">account_circle</mat-icon> -->
       <img class="img" src="../../../assets/images/mm.jpg" alt="Avatar">
     </button>
         <mat-menu #menu="matMenu" class="menu">
@@ -58,10 +56,9 @@
         </div>
     </div>
 </mat-drawer-container>
-<mat-drawer #drawer class="sidenav " mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity() " class="slider">
+<mat-drawer #drawer class="sidenav "  #sidenav mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity() " class="slider">
     <mat-selection-list [multiple]="false ">
         <mat-list-option class="option " routerLink="/dashboard/notes" #note [selected]="note ">
-            <!-- <mat-icon class=" material-icons-outlined " fxFlex="column ">emoji_objects</mat-icon> -->
             Notes
         </mat-list-option>
         <mat-list-option class="option ">Reminder</mat-list-option>
