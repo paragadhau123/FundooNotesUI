@@ -31,8 +31,8 @@ export class DisplaynotesComponent implements OnInit {
     this.hoverIndex = i
   }
 
-  openDialog(title, message, noteId, accountId) {
-    this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId, accountId: accountId } });
+  openDialog(title, message, noteId, accountId,color) {
+    this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId, accountId: accountId,color:color } });
   }
 
   noNote() {

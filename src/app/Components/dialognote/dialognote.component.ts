@@ -30,7 +30,7 @@ export class DialognoteComponent implements OnInit {
       "accountId": this.data.accountId,
       "title": this.title,
       "message": this.message,
-      // "color": this.data.color
+      "color": this.data.color
     }
     console.log(noteData)
     this.noteService.updateNotes(noteData).subscribe(response => {

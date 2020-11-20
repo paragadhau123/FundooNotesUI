@@ -22,9 +22,11 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.trashNote(noteColorData).subscribe(response =>{
       if(this.noteObject.isTrash==true){
+        this.change.emit();
         this.utility.displayMessage("Note is Untrashed succesfully");
       }
      else{
+      this.change.emit();
       this.utility.displayMessage("Note is trashed succesfully");
      }
     }
@@ -53,9 +55,11 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.archiveNotes(noteColorData).subscribe(response =>{
       if(this.noteObject.isArchive==true){
+        this.change.emit();
         this.utility.displayMessage("Note is Unrchived succesfully");
       }
       else{
+        this.change.emit();
         this.utility.displayMessage("Note is Archived succesfully");
       }
     }

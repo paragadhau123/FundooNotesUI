@@ -18,9 +18,9 @@ export class TrashnoteComponent implements OnInit {
 
   trashNotes(){
     this.noteService.getNotes().subscribe(response => {
-      this.note = response['data'].filter(ele=>ele.isTrash==true)
+      this.note = response['data'].filter(card=>!card.isArchive && card.isTrash)
       this.note.reverse()
-      this.utility.displayMessage("Trash Notes Displayed Succesfully")
+      // this.utility.displayMessage("Trash Notes Displayed Succesfully")
     })
   }
 

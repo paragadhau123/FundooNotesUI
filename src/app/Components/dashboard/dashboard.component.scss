@@ -8,13 +8,20 @@ $white:white;
     
 }
 
+::ng-deep{
+    .mat-drawer-container{
+        background-color:white;
+   }
+}
 .slider {
     position: absolute;
     top: 10%;
     width: 200px;
   
 }
-
+// .userDetail{
+//     height: 100px;
+// }
 .titleBar {
     display: flex;
     flex-wrap: wrap;
@@ -26,10 +33,10 @@ $white:white;
     border-radius: 50%;
 }
 
-.menu {
-    height: 356;
-    width: 456;
-}
+// .menu {
+//     height: 356;
+//     width: 456;
+// }
 
 .name {
     margin-top: 10px;

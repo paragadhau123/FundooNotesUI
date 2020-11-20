@@ -1,5 +1,5 @@
-<form >
-    <mat-form-field appearance="none" >
+<form [style.background]="data.color">
+    <mat-form-field appearance="none">
       <input matInput autocomplete="off" class="input" placeholder="title" value="{{data.title}}" (input)="changeTitle($event.target.value)" >
     </mat-form-field>
     <mat-form-field appearance="none">

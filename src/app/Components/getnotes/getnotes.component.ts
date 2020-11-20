@@ -23,9 +23,8 @@ export class GetnotesComponent implements OnInit {
 
   getNotes() {
     this.noteService.getNotes().subscribe(response => {
-      this.note = response['data']
+      this.note = response['data'].filter(card=>!card.isTrash && !card.isArchive)
       this.note.reverse()
-      this.utility.displayMessage("Notes Displayed Succesfully")
     })
   }
 

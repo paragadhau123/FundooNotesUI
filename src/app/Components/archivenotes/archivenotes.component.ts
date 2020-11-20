@@ -17,9 +17,9 @@ export class ArchivenotesComponent implements OnInit {
 
   archiveNotes(){
     this.noteService.getNotes().subscribe(response => {
-      this.note = response['data'].filter(ele=>ele.isArchive==true)
+      this.note = response['data'].filter(card=>card.isArchive && !card.isTrash)
       this.note.reverse()
-      this.utility.displayMessage("Archive Notes Displayed Succesfully")
+      // this.utility.displayMessage("Archive Notes Displayed Succesfully")
     })
   }
 
