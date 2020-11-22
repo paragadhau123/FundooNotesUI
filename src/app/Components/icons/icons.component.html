@@ -6,6 +6,10 @@
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="add peron">person_add</mat-icon>
 </button>
 
+<button mat-icon-button>
+    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="add image">perm_media</mat-icon>
+</button>
+
 <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="change color">color_lens</mat-icon>
 </button>
@@ -15,11 +19,6 @@
     </mat-icon>
 </button>
 
-<!-- <button mat-icon-button>
-    <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="delete">delete
-    </mat-icon>
-</button> -->
-
 <button mat-icon-button [matMenuTriggerFor]="menu1">
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="more">more_vert</mat-icon>   
 </button>
@@ -27,8 +26,7 @@
 
 <mat-menu #menu="matMenu" fxLayout="row">
     <div fxLayoutAlign="space-around center" class="pallet">
-        <div class="color-one" (click)="getColor('#fff')">
-            <mat-icon>done</mat-icon>
+        <div class="color-one" (click)="getColor('#fff')">           
         </div>
         <div class="color-two" (click)="getColor('#f28b82')"></div>
         <div class="color-three" (click)="getColor('#fbbc04')"></div>

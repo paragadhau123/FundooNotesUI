@@ -7,7 +7,7 @@
                 </mat-form-field>
             </mat-card>
             <mat-card *ngIf="!reset" class="back-card">
-                <form>
+                <form >
                     <mat-form-field appearance="none" class="input">
                         <input matInput autocomplete="off" placeholder="Title" [formControl]="title" required>
                     </mat-form-field>
@@ -15,8 +15,7 @@
                         <input matInput placeholder="Take a note" [multiline]='true' rows="3" autocomplete="off" autofocus [formControl]="message" required>
                     </mat-form-field>
                     <span  fxLayout.xs="row" fxLayoutAlign.xs="space-between center" fxLayout="row" fxLayoutAlign="space-between start" class="div">
-                    <app-icons></app-icons>  
-                                 
+                    <app-icons></app-icons>                                   
                     <button type="submit" mat-button (click)="addNote()">close</button>
                 </span>   
                 </form> 

@@ -5,12 +5,13 @@
     </button>
         <img src="../../../assets/images/keep.png">
         <span>Fundoo Note</span>
-        <mat-card class="input-card">
+        <mat-card class="input-card" >
             <mat-icon>search</mat-icon>
             <div class="input-feild" >
                 <input type="search" placeholder="search">
             </div>
         </mat-card>
+        <!-- <mat-icon fxShow.xs="true">search</mat-icon> -->
         <span class="settings"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu">
       <img class="img" src="../../../assets/images/mm.jpg" alt="Avatar">
@@ -22,7 +23,7 @@
                 </div>
                 <div fxLayoutAlign="center" class="name">{{name}}</div>
                 <div fxLayoutAlign="center" class="email">{{email}}</div>
-                <div fxLayout="row wrap " fxLayoutAlign="center">
+                <div fxLayout="row wrap" fxLayoutAlign="center" class="button">
                     <button mat-stroked-button type="submit " (click)="logout() ">Logout</button>
                 </div>
             </div>
@@ -56,7 +57,7 @@
         </div>
     </div>
 </mat-drawer-container>
-<mat-drawer #drawer class="sidenav "  #sidenav mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity() " class="slider">
+<mat-drawer #drawer class="sidenav" mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity() " class="slider">
     <mat-selection-list [multiple]="false ">
         <mat-list-option class="option " routerLink="/dashboard/notes" #note [selected]="note ">
             Notes
