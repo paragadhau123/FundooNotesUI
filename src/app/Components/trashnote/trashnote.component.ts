@@ -9,16 +9,16 @@ import { UtilityService } from "../../Services/utilityservice/utility.service";
 })
 export class TrashnoteComponent implements OnInit {
   note = []
-
+  isTrash = true
   constructor(private noteService: NotesserviceService, private utility: UtilityService) { }
 
   ngOnInit(): void {
     this.trashNotes()
   }
 
-  trashNotes(){
+  trashNotes() {
     this.noteService.getNotes().subscribe(response => {
-      this.note = response['data'].filter(card=>!card.isArchive && card.isTrash)
+      this.note = response['data'].filter(card => !card.isArchive && card.isTrash)
       this.note.reverse()
       // this.utility.displayMessage("Trash Notes Displayed Succesfully")
     })

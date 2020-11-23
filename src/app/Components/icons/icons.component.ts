@@ -10,7 +10,8 @@ import {UtilityService  } from "../../Services/utilityservice/utility.service";
 export class IconsComponent implements OnInit {
   constructor(private noteService: NotesserviceService,private utility:UtilityService) { }
   @Input() noteObject
-
+  @Input() isTrash: any
+  @Input() isArchive: any
   @Output() change = new EventEmitter<any>();
 
   ngOnInit(): void {
@@ -32,7 +33,21 @@ export class IconsComponent implements OnInit {
     }
     )
   }
-
+  deleteNotes(){
+    let noteData = {
+      "noteId": this.noteObject.noteId
+    }
+    console.log(noteData)
+    this.noteService.deleteNotes(noteData).subscribe(response => {
+      this.change.emit();
+      this.utility.displayMessage("Note is Deleted Permenantly");
+    },
+      error => {
+        console.log(error)
+        this.utility.displayMessage("Note is not deleted");
+      }
+    )
+  }
   getColor(color) {
     let noteColorData = {
       "color": color,

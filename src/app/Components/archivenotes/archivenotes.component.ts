@@ -9,6 +9,7 @@ import { UtilityService } from "../../Services/utilityservice/utility.service";
 })
 export class ArchivenotesComponent implements OnInit {
   note = []
+  isArchive = true
   constructor(private noteService: NotesserviceService, private utility: UtilityService) { }
 
   ngOnInit(): void {

@@ -11,6 +11,9 @@ import { DialognoteComponent } from '../dialognote/dialognote.component';
 export class DisplaynotesComponent implements OnInit {
   hoverIndex = -1
 
+  @Input() isTrash: any
+  @Input() isArchive: any
+  
   nonoteCondition = false
 
   @Output() change = new EventEmitter<any>();
@@ -31,8 +34,8 @@ export class DisplaynotesComponent implements OnInit {
     this.hoverIndex = i
   }
 
-  openDialog(title, message, noteId, accountId,color) {
-    this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId, accountId: accountId,color:color } });
+  openDialog(title, message, noteId, accountId, color) {
+    this.dialog.open(DialognoteComponent, { data: { title: title, message: message, noteId: noteId, accountId: accountId, color: color } });
   }
 
   noNote() {

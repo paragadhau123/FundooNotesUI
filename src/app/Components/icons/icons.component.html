@@ -1,3 +1,4 @@
+<div  *ngIf="!isTrash &&!isArchive">
 <button mat-icon-button>
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="reminder">add_alert</mat-icon>
 </button>
@@ -22,6 +23,8 @@
 <button mat-icon-button [matMenuTriggerFor]="menu1">
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="more">more_vert</mat-icon>   
 </button>
+
+</div>
 
 
 <mat-menu #menu="matMenu" fxLayout="row">
@@ -49,3 +52,24 @@
     <mat-menu #menu1="matMenu">
         <button mat-menu-item (click)="trashNote()">Trash Note</button>       
     </mat-menu>
+
+    <div  *ngIf="isTrash">
+
+        <button mat-icon-button>
+            <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="Untrash Note" (click)="trashNote()">restore_from_trash
+            </mat-icon>
+        </button>
+        
+        <button mat-icon-button>
+            <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="Delete Permanently"  (click)="deleteNotes()">delete_sweep</mat-icon>   
+        </button>
+
+    </div>
+
+    <div  *ngIf="isArchive">
+        <button mat-icon-button>
+            <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="UnArchive Note" (click)="archiveNote()">unarchive
+            </mat-icon>
+        </button>
+
+    </div>
