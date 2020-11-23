@@ -1,3 +1,6 @@
+<link
+  href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+  rel="stylesheet">
 <div fxLayout="row">
     <mat-toolbar class="header">
         <button mat-icon-button (click)="drawer.toggle()" (click)="changeVisiblity()" (click)="showFiller = !showFiller">
@@ -5,12 +8,12 @@
     </button>
         <img src="../../../assets/images/keep.png">
         <span>Fundoo Note</span>
-        <mat-card class="input-card" >
+        <mat-card class="input-card">
             <mat-icon>search</mat-icon>
-            <div class="input-feild" >
+            <div class="input-feild">
                 <input type="search" placeholder="search">
             </div>
-        </mat-card>
+        </mat-card>        
         <!-- <mat-icon fxShow.xs="true">search</mat-icon> -->
         <span class="settings"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -19,7 +22,7 @@
         <mat-menu #menu="matMenu" class="menu">
             <div class="userDetail">
                 <div fxLayout="row wrap" fxLayoutAlign="center">
-                    <img class="img" src=" ../../../assets/images/mm.jpg " alt="Avatar ">
+                    <img class="img inner" src=" ../../../assets/images/mm.jpg " alt="Avatar ">
                 </div>
                 <div fxLayoutAlign="center" class="name">{{name}}</div>
                 <div fxLayoutAlign="center" class="email">{{email}}</div>

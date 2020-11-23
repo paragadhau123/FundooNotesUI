@@ -16,11 +16,15 @@ $white:white;
 
 ::ng-deep{
 .mat-menu-panel .userDetail{
-    height: 200px;
+    min-height: 200px;
     width: 200px;
+    padding: 8px;
 }
 }
-
+.inner{
+    height: 80px;
+    width: 80px;
+}
 .slider {
     position: absolute;
     top: 10%;

@@ -1,4 +1,5 @@
-<div  *ngIf="!isTrash &&!isArchive">
+
+<div  *ngIf="!isTrash &&!isArchive" class="icons">
 <button mat-icon-button>
     <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="reminder">add_alert</mat-icon>
 </button>
@@ -53,17 +54,15 @@
         <button mat-menu-item (click)="trashNote()">Trash Note</button>       
     </mat-menu>
 
-    <div  *ngIf="isTrash">
-
+    <div  *ngIf="isTrash" >        
+        <button mat-icon-button>
+            <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="Delete Permanently"  (click)="deleteNotes()">delete_sweep</mat-icon>   
+        </button>
+        
         <button mat-icon-button>
             <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="Untrash Note" (click)="trashNote()">restore_from_trash
             </mat-icon>
         </button>
-        
-        <button mat-icon-button>
-            <mat-icon class="material-icons-outlined" #tooltip="matTooltip" matTooltip="Delete Permanently"  (click)="deleteNotes()">delete_sweep</mat-icon>   
-        </button>
-
     </div>
 
     <div  *ngIf="isArchive">
