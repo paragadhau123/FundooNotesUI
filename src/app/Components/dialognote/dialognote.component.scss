@@ -10,7 +10,8 @@
 }
 .options{
   margin-top: 2%;
-  margin-right: 6%;
+  // margin-right: 11%;
+  width: 100%;
 }
 
 ::ng-deep{
@@ -20,9 +21,12 @@
        width: 500px;
 
  }
+}
  @media only screen and (max-width: 400px) {
   .ll{
       width: 300px;
   }
 }
+.closeButton{
+  margin-right: 10px;
 }

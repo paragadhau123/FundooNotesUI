@@ -25,13 +25,4 @@ export class DashboardComponent implements OnInit {
     localStorage.removeItem('Email')
     this.route.navigate(['login'])
   }
-
-  changeVisiblity() {
-    return this.isButtonVisible = !this.isButtonVisible
-  }
-
-  checkVisiblity() {
-    return this.isButtonVisible
-  }
-
 }
